@@ -1,0 +1,274 @@
+global.chickenidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAQgAAAAYCAYAAAAGV2PQAAAAB3RJTUUH4QkJECEFgQcNYAAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAACN0lEQVR4nO2aMU4EMQxF5xBUHIbbcBUqGs5AS09JS0eDtHegQNxgUZAsGa+zk2TsxIn+Sl+T1Wqe7XzHO6Dd7u6fNgiCIE3DE4AgKK6GJwBBUFwNTwCCoLgangBUaNS2nTVZ8+Ua/L78aP5WQ70KWMlkKz7f55fnh/P3z+vF2opPPL62YoNftv/E/fx4M62B1i017Caekp3VhFn5fO/TMEiS6yO5c37KM8dviSF7B/yyGOlKMWjd6nPu/GrrXVYugJxmvIDoJszMp70nLrG5jjYP8TlLsj35R4bc7HwthtY7FjWkKz1tyv5J15L+rNok/j6yCRH4rYeMTNMGgmykI8PNi08xtKEG/v/+8Y5hMYCKm0grJLoJXnzNYKtDpn275GQx3MDvy+9Zwx67hL+kCTPz94azRe7gj+P3qiHda9GfS5qwAp/fL2N9vd/+6fR4A/6EfO8Ylv25rAmz8q8Zm1jElHwS+LH5I2o40p8hCgD/ki0fDzkvp5JhtGX+PAK/D59iyH9sW9dg1Z9LmjCCn+6z4BNbM5buTa9r15LcPflag4LftwarAbSkCT34Xocslzvnc/HJ3/IEpA058H35PIY8yB41HOnPZU3oxfc0WP7+RFNNU8ohVMqvYWt7A/64GmSP1vZn9QHwMmFGPj9kHvyS5gF/Tn5NjJH9X1yANmUsNwh88MGPxy8KoAEoQGvy4IMPfnz+boAc4NpnNQWADz74cfnNwSEIWl/DE4AgKK6GJwBBUFz9AvqnkvFm9gmMAAAAAElFTkSuQmCC",11,12,12)
+global.chickenwalk = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAYAAAAF6fiUAAAAB3RJTUUH4QkJECE1p949zAAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABm0lEQVR4nO2WsW0DMQxFb4hUGcbbZJVUaTKDW/cp3aZLE8A7pDC8wRk6hAZBUBTJEy0ddAY+LMC49z9J2+J0ePucdrVT8wCjq3mA0dU8wOhqHmB02R+YpjkpJEwgu9f8JjDoevt6GK0tKJK9hfxq+O/PeYGfju/LmTP0Bk9MYGM+sL0N2kL+okmCJCCA4UzNzD+9fzbwc2yQt0m95xcNMAxD6dnTII6Pi6DnGvwe85sLyBVTq0Ec3/vt30J+tYlkuOY/+ll8yaMmn/NwDSAHshq04ls8avK5QZsHkGsE1uXjZf77fl2UzpYiovlScziPaH6S6Q6g2wOF4uC0CNXua+DTIWg3lpwH5mOPtXx86eZq4PjmCdMCOGm+URJfYnv4eB2MyI/54KHlFw3ofgsFpM/TS3ovFcDtzjX50gAkD829QPvDeWj4qgblmkSLodIOIILPecA+XpMP8vJV4bmH8UXqucBoUzSyeNAmlXw8bG4QVn6xSeLDzvC0IZriajVozdqp4ZufjSw8InAN357YTyt+1z6ALtU8wOi6A9Uox99E1VbqAAAAAElFTkSuQmCC",4,12,12)
+global.chickenhurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAEgAAAAYCAYAAABZY7uwAAAAB3RJTUUH4QkJECEdkmuVNgAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABVklEQVR4nO1XMQ7CMAzMI5h4DL/hK0wsvIGVnZGVjQWpf2BA/KDIiEOWSdrGceMIEemUtIku50vjpGG13oU/0nAX0DrcBbQOdwGtI9nRv0vsWfapJg6hJ8SeZZ8n/6hBQ6U0gOvl1EPs/XH8arfArzKmxCiIRAAk9rDfvNpUo83HefK7GESiIZhqKZ6/1xhkya/eXhpzeBAQHBOOd9ptZslf/AVpxPMVRpEBaQ2y5nfZYlhhWbh4FG0OsuIv3mIas8YCuJ2Xn3fddpGdsC35Tc2ZYpLMD1w8iSXxqCUQTE1+F4N4jgBSomk8FV7X5HcxKHbKUABYQSlYoia/aw6Sxy6CSCE3B1nwmxo0RTwPQF7iUkdx7o3akj85yVzm8CD4bVbC4j5kwT/ZoNz+3ABSuUTzP2bJPzhJiQE5QWh/KWrwjw6Y0yC+kq3yzyLql+AuoHW4C2gdT9MjCqvGTTn7AAAAAElFTkSuQmCC",3,12,12)
+global.chickenhead = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAB3RJTUUH4QkJECAU8qwc0wAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAAAtklEQVR4nGOwS53IQEtMU8NHLaC+BUDwH4TR2WRbADMEht992I7BJssCZEOvnN8PNmzN4jYwG0TD2MT4AqcFIENhBoJodMORLSEriEAaYQZiMxgmRsgCJgYs4NDsfJAPGDR0LFHEb1w5jkITBfDFAboPsGGqBBE2C1+dkALj6z0ieC0hOvxhGGQgzGB0S7ClKqJSEbrh+DC6j0iKA5BmmAEggI8mKycTWzwQXVRQA49aMGoB5RgAHGIp54NLrDIAAAAASUVORK5CYII=",1,12,12)
+global.chicken2idle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAQgAAAAYCAYAAAAGV2PQAAAAB3RJTUUH4QkJESUJ7R/ueAAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAACTElEQVR4nO2aPUqEQQyGv9LGQrASz+IpvIJXsbLxDLbWa2lrZyN4BwvxBisRAtmY2Z2fzC+v8PLNsvgkmTeTHWW3m7vHDYIgyFL3BCAIGlfdE4AgaFx1TwCCoHHVPQEo0qht21vy5us1+G35o/mbDK1VwEome/HlPj8/3e+/f17+rb34zJNrLzb4cfvP3I/3V9caeJ1Tw8nEKdlZTZiVL/eehgFJr0tyl3zKM8TPiaF7B/y4GPTkGLzO9Tl0fq31SVYogJ5msoDRTZiZz3vPXGZLlTYP8yVLs2vyS4bc7HwrhtU7HjXQk2+bun/oGdOfSZskX49swgj83EPGplkDQTdSyXCrxecY1lAD/7B/asfwGEDRTWQVMroJtfiWwV6HzPp00bo9PyvOHfw+/JY1hNhSLjeI2UyYmX9sOO+uLw7kdYMAvx2/VQ36gyq3P5c0YQU+m8ixaE0i5tfb1Z8+Hy7Bn5BfO4Znfy5rwqx8bSzzSMRipuazwB+b37qG0v7sXgD4NltfDyUvpJhhtAX+PAK/DZ9j6H9se9fg1Z9LmtCDT7/nwWe2vhoyn96nn2PPmNxr8q3rLfhta/AaQEua0IJf65CFcpd8KTn5c25A1pADvy5fxtAHuUYNJf25rAmt+DUN1t8/sZTSlHoIxfJT2NbegN+vBt2jqf2ZfABqmTAjXx6yGvyY5gF/Tn5KjJ79H12ANWU8Nwh88MEfjx8VwAJwgNzkwQcf/PH5JwOEAMfeSykAfPDBH5efHRyCoPXVPQEIgsZV9wQgCBpXv20y++Qt9MPqAAAAAElFTkSuQmCC",11,12,12)
+global.chicken2walk = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAYAAAAF6fiUAAAAB3RJTUUH4QkJEBsUzh7z6wAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABsElEQVR4nO2XMU4EMQxFp6ShQKJCnIVT7BW4ChUNZ6ClhpJ2Oxok7kCBuMEgj/DKspzE9jibjDIrfW20q3n/284q2enu/mna1U7NA4yu5gFGV/MAo6t5gNFlf2CaZlCVMBXZveY3gVE/v28no7UF1WRvIb8a/vnxvsBfnh+WtWToDQ5MZFM+sr0N2kL+oglAAIhgXHMz80/vn438FBvlbVLv+bMGFEahfO1pkMSnRfB1BL/H/OYCUsVENUjie3f/FvKrTA6XF7NkCJ97G3ROfskjks89Snz1hKkBrF9vr06K2KHRfItHJB89tPwkOLVbEPr1eD1/H28WwdpSRG2+1JycR20+yHQG8NsDFUBpcF6E6u5r4PMhaG8sKQ/Kpx5r+fTQTdUg8c0T5gVI0uyoHD/H9vDpdbBGfspHDy2/aMDvt1gAfA+v3HupAOnuHMnPDSDnoTn4eX8kDw1f1aBUk3gxXNoB1OBLHngfj+SjvHxVeOlhepB6DjDeFI0sHrxJJR8PWxqElV9sUvZhZ3jeEE1xUQ1a879Cwzc/W7PwGoEjfHtin634XfsAulTzAKPrD9DrmP8m/anHAAAAAElFTkSuQmCC",4,12,12)
+global.chicken2hurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAEgAAAAYCAYAAABZY7uwAAAAB3RJTUUH4QkJEB0d4ZjsyQAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABZUlEQVR4nO1XMQ7CMAzsyMKAxIR4C6/gC3yFiYU3sDLDyMrGgsQfGBA/KHKFkWXitnHcOEJYOqVNouv50rhptVhtqz9kuAsoHe4CSoe7gNIhDtTvCN3zMdWDq6oGhO75mCd/p0FtkZrA9XKqUezjefy6LoFfZUyKUSgSEwCx+926uYYWr+k8T34Xg0A0CoaWi6f9GoMs+dXbS2MOTQIFh4Rjn3abWfInv0Ea8XSFMXhCWoOs+V22GK4wD+g7zCcNMLQ1yIo/eYtpzJISWI5Hjfj7efbpu22m0QXbkt/UnD4m8fqAAcJBLIjHlgOTycnvYhCtEQhJNMyHoG1OfheDQl8ZSABXkAvmyMnvWoP4ZxeTkBBbgyz4TQ3qI54mwA9x0qc49kRtyS8+ZChzaBL0NMthcR6y4O9tUOx4bAJSLdH8j1nytz4kxYCYJLS/FDn4OycMaRBdyVL5BxH1S3AXUDrcBZSOF8P+AEPIc7ldAAAAAElFTkSuQmCC",3,12,12)
+global.chicken2head = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAB3RJTUUH4QkJEB4nDLlmuAAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAAAy0lEQVR4nGOwS53IQEtMU8NHLaC+BUDwH4TR2WRbADMEht992I7BJssCZEOvnN8PNmzN4jYwG0TD2MT4AqcFIENhBoJodMORLSEriEAaYQZiMxgmRsgCJgYs4NDsfJAPGDR0LFHEb1w5DqdXZDVh04oJ8MUBug9AeJuMIAqmOIhCeDngkQligzDI4FcnpMD4eo8IXkuICn+YoSAMMhBmMLol2FIVUakIhpENxYXRfURSHIA0wwwAAXw0WTmZ2OKB6KKCGnjUglELKMcASjMfLey7QxUAAAAASUVORK5CYII=",1,12,12)
+global.steroidsidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAQgAAAAYCAYAAAAGV2PQAAAAB3RJTUUH4QkIFgMnT+QRcwAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAAChElEQVR4nO2ZzVHDQAyF3QEdcaIBiqAV7jTChXYoggaYMMuMGFkjydo/7FXe4U2STfw9aSXLTrI9vrxtEARBmk4PAIKg6+r0AKCDAm3bzRL44M/2uEQS4NvM96eH29fr86++Pz926vEAv44v2Vfnj/JIvUkr8i1meV7WpMp6jQf4ufmjPVJu0sr88hnJLI/aECI/uoKCD77Fb/VQG3+kwewEMvHLe9pdCDGoPvzuRHqCD75UYdBjrYfZ+KMMZieQhW+xqYGoiazhw9fBB3+Ux+FwGJXErAQy8L39l+vy64t2jBY7+PfJ7/UIJdCbBPgxvvb1RPPVhhB/bjUQ+PfFH+Gxg1sJ9CZxtEH3zJf7r0kruheHFTv41+RrvNHxt3r8h0F6fk+R+d2JFzuJ35nQa+lfnlt8LRbwc/G1XuJrNR6ugfzu3GjgblAWfmuRI3x5N6K9bmkgHh/4efnaucw9eK9WDQit6RsMwgmszrcKYA3bCF8OGW34cEZNA0luhE+P4K/D7+mh3S/0IwxIlMSMBDLxI/vP91QbPh5b/gPDa1TLl7UFfy1+i4dpoF3Fok2qXcW8BHo3KTtf85Pr0QaSgyjKlzGCn4/Pz/u/3vT+yqMrn2xczUQG6U04mWiUHx1AK/J5cY742jDx9t/7q1YOsghfssHv59fUt4cv3zviuyZ0i21tEF/zJlxkANXwoyfAGXxtmo/mS0X2nzy0GtfwLTb4OfmmCX1IHugZyGOtKUcJ8AEU4UdOgOx86/ORBtJqXMP3agv+GvzdyR/gu0Z8QHgNHQn6aABF+JFNAj9eixn1BT8XP2RgAVoaEnzwwV+H32wMQVB+nR4ABEHX1ekBQBB0Xf0A4nn91Z2D/8MAAAAASUVORK5CYII=",11,12,12)
+
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		enemychicken_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define enemychicken_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	bskin = 0
+	spr_idle = global.chickenidle
+	spr_walk = global.chickenwalk
+	spr_hurt = global.chickenhurt
+	spr_head = global.chickenhead
+	hitid = [spr_idle,"CHICKEN"]
+	spr_dead = sprMutant9Dead
+	snd_hurt = sndMutant9Hurt
+	snd_dead = sndMutant9Hurt
+	corpse = 0
+	direction = random(360)
+	gunangle = direction
+	mask_index = mskBandit
+	spr_shadow = shd24
+	size = 1
+	team = 1
+	maxhealth = 80*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 1
+	meleedamage = 3
+	target = 0
+	targetvisible = 0
+	fire = 100
+	walk = 0
+	time = 0
+	raddrop = 0
+	on_step = script_ref_create(enemychicken_step)
+	on_destroy = script_ref_create(enemychicken_dead)
+	return id;
+	}
+
+#define enemychicken_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && collision_line(x,y,target.x,target.y,Wall,0,0) < 0)
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if fire > 0 
+	fire-=1
+	
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 4{
+	speed = 4
+	}
+
+if  targetvisible == 1 and random(30)<1{
+	direction = point_direction(x,y,target.x,target.y)
+	walk = 20
+	//sound_play(sndCrystalShield)
+	}
+else if (random(30) < 1){
+	direction += random_range(-90,90)
+	walk = 40+random(20)
+	}
+if bskin = -1{
+	walk = 10
+	direction += random_range(-30,30)
+	time += 1
+	if random(5) < 1
+		with instance_create(x,y,BloodStreak){
+			image_angle = 60+random(60)
+			depth = other.depth+1
+			motion_add(image_angle,random(2))
+			}
+	if time > 200
+		my_health = 0
+	}
+
+repeat (1) {
+	var dodgethis = instance_nearest(x, y, projectile);
+	if (dodgethis == noone) break;
+	if (dodgethis.team == team) break;
+    var dodgethis_x = dodgethis.x;
+	var dodgethis_y = dodgethis.y;
+    if (point_distance(x, y, dodgethis_x, dodgethis_y) >= 100) break;
+	var projectiledir = point_direction(x, y, dodgethis_x, dodgethis_y);
+	if distance_to_object(dodgethis < 100) and random(10) < 1 {
+		direction = -projectiledir + random(30)-15
+		walk += 1
+		if speed > 5
+			speed = 5
+		if (random(3) < 2) {
+			with (instance_create(x + lengthdir_x(20, projectiledir), y + lengthdir_y(20, projectiledir), Slash)) {
+				damage = 8;
+				motion_add(projectiledir, 5);
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+		}
+	}
+	if (random(16) < 1 && abs(angle_difference(projectiledir, gunangle) < 100)
+	&& dodgethis.typ != 0) {
+		fire = 5
+	} else if (random(5) < 1) {
+		var _furthest = instance_furthest(x + random(120) - 60, y + random(120) - 60, Floor);
+		if (_furthest != noone) {
+			walk += 1
+		}
+	} else
+		direction = point_direction(x, y, dodgethis.hspeed, dodgethis.vspeed) + 180 + random(30) - 15;
+	}
+
+if fire > 0 
+	fire-=1
+else if targetvisible == 1 and distance_to_object(Player)<96{
+	gunangle = point_direction(x,y,target.x,target.y)
+	repeat 5{
+		if instance_exists(self){
+			wkick += 2
+			fire = 20
+			walk = 0
+			}
+		wait 2
+		}
+	if instance_exists(self){
+		sound_play(sndWrench)
+		with (instance_create(x + lengthdir_x(20, other.gunangle), y + lengthdir_y(20, other.gunangle), Slash)) {
+			damage = 8;
+			motion_add(other.gunangle, 5);
+			image_angle = direction;
+			team = other.team;
+			creator = other;
+		}
+		motion_add(gunangle,12)
+		wkick = -30
+		}
+	else {
+		repeat 3{
+			if instance_exists(self){
+				wkick += 2
+				fire = 30
+				walk += 5
+				}
+			wait 2
+			}
+	}
+}
+
+#define enemychicken_dead
+repeat(13){
+	with instance_create(x,y,Feather){
+		motion_add(random(360),random(4))
+		image_angle = random(360)
+		}
+	}
+if bskin >= 0{
+	with instance_create(x,y,Corpse){
+		sprite_index = sprMutant9HeadIdle
+		motion_add(random(360),8)
+		}
+	with instance_create(x, y, CustomEnemy){
+		hitid = [sprMutant9Idle,"CHICKEN"]
+		bskin = -1
+		spr_idle = sprMutant9HeadlessIdle
+		spr_walk = sprMutant9HeadlessWalk
+		spr_hurt = sprMutant9HeadlessHurt
+		spr_dead = sprMutant9Dead
+		snd_hurt = sndMutant9Hurt
+		snd_dead = sndMutant9Hurt
+		direction = random(360)
+		gunangle = direction
+		mask_index = mskBandit
+		spr_shadow = shd24
+		size = 1
+		team = 1
+		maxhealth = 80*(GameCont.loops*GameCont.loops+1)
+		canmelee = 1
+		meleedamage = 3
+		target = 0
+		targetvisible = 0
+		fire = 100
+		walk = 100
+		time = 0
+		raddrop = 16
+		on_step = script_ref_create(enemychicken_step)
+		}
+	}
+	
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}

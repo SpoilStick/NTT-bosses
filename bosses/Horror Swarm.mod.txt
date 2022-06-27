@@ -1,0 +1,53 @@
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (2*GameCont.loops+1+instance_number(Player)) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		with instance_create(_x, _y, EnemyHorror) {
+			maxhealth += 25
+			maxhealth *= GameCont.loops+1
+			my_health = maxhealth
+		}
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}

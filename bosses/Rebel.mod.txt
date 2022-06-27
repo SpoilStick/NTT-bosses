@@ -1,0 +1,361 @@
+global.rebelgun = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAABYAAAAMCAYAAABm+U3GAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAA10lEQVQ4y7WTPQ6CQBCF3xzAygriD4XBwoIjcAFqO8LZDB01F4CGjsTCQmMBYiAxofIAY7WbLIuCRKfZZPLyzc7MG2Jm/CNoCExEUsDM9FOwt/dRVyXyLO3V9BX8CBZQa7NV8quFCQC43WsU1zPiKNQKETMr7XbD2/uDbddVCXO5BgDEUaiCA8dWxMWjBQA8rZ2SnxUnDZw0rTYWOQoiYteYa2LXmEt4nqUIHBuH40V7u3OWPxZQAWRm6st/tbx3lhLgpGllobGWG3SFAP/Ux1OPY9SBTI0XVuGR6VexZjQAAAAASUVORK5CYII=",1,11,6)
+global.rebelidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAYAAABEmHeFAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAADk0lEQVR42u2bv2obQRDGZyFP4cZuDE4TgtMkBENATYpUaUNAJKQOKVylzgPoAZJHcKVCpeEQcmMh3PjAKXSNyBOkCIFNYeaYG+3e6f7MJkTf19ic0P12Zufb2b2znfeeIGhf5WAACAaAIBgAgmAACIIBIAgGgCAYAIJgAAiCAba+6NzWF733LtnA95gfYoPfjd/aAAxfzad0fXlBRERPXrwmIqLHz1+ZJ+Jf4X/98q68lpp/Ph7RyfFhhX19eUHvP39Lwpex8xhS85nZN/+tDMDw/K6gk+PDEswTwLJKRIwv2db88/GIiMiMr1c3eQ9Z/LHcp4r/zYdPlc/+5vz34e9sgKbik4NhNw6ZgBBfBj0UXxZgqPhk8cdi78p3zvmzk0M6PToor01mC/LeO915LOJnhuTpHKTit118uvJrDaBXI916ry8vKmBuQav5tJcBYns8yQ8lvi+fC5CV5UV5D731iLG78p1z/uPLZ0REtFxv6PTogJbrTTkGa74cw2S2IP4p49dbn9gWrE/8klm39Rtq/qMG0KsRT8qjs4dERJTfFWUbZPDvp/fffXBFvYqfi5DZk9mCeCxWfF380gREVOHrLjgUn3/X48jyIsqXhd83/1yEPNey+8TyLwu/C1/HLRcd+bnV/DvvfXDFlZMgW7I2Agff90QuAw1xU/B14WnzW/KbjBjix9h94ufOow0gu9P47Whrv92Vr03HCx6LuVbzXxpAgpbrTW0RSPFAWDfZbaV1t01C08Rb8HUL1vtwHpclPzQGmYNQ/Jo9RPw65iwvSBfokPyQAVLWX7kFChUhrwKyK4QGESqU2F6uafXX95erkRVft2I5IbIQLPlNY7Dm61VeL0JN+deLxK78XRZfvQ2ui781X54B9GD0Ieh8PKKrq+/BbVFowH1WQN0CJ7MF1fF1YrrwQwdBeb8U/LptgWX+YwZo4se6YxcDhIzH17O8MIl/qwPI4gs9Asvv7g+Fv378jN50iOKTxuPPrfmxR4Ep+aHC4DlJlf9YQTG/jt3XfKF76fwPya8YoO7wEHoMdZPdmhXfro/B9BiGKL5d47fmazOm4IeKkYvQcv6b/rzBqv46vQmOvQHlU7nVq3Dw0/Bjb6P/x/hbG2A1n269eJEtyjoB4IM/JL+TAfRbNnamZfDgg2/Bb22A0B696fwwZALAB39IPv4hBtprwQAQDABBMAAEwQAQBANAEAwAQfugP/xdgAzp14RzAAAAAElFTkSuQmCC",6,16,16)
+global.rebelwalk = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAYAAABEmHeFAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAD70lEQVR42u1bPUscQRh+BoKFv0Bszubg0oRgmkgQAjYWqdKmEUNqSWGVMlyVyh9gkl9gZWETEA7xGkVsFJJCG8kvsAiBSRFeee/dmdmZ2dm9k3uf9u6cmedrdmdXY62FQjGvMBoAhQZAodAAKBQaAIVCA6BQaAAUCg2AQqEBmO0FGFNZgLXWqLTKf+sBmObiaeyLk0OcHR8AAF68fgsAeP7qzVwEYVb4BzChwWPiPysA0zafMcbuD7dx/fMWg37vYWwuBAC8//S1k7l0bcJpm88YY3e3NjDo94IaPAb+kwPgMx83XqnFy8VZa03d+FwICmQbAtDc9ofblXHJhG0EImS+0uH38V83vuSiTf5DJRzDf1IAXObjpJc0nzHGrg96AIDVlWUAwN7RKQCABKAxz44PnAa8ODnMngMR7Pot5+Hdh4/O3YcbsZQBfObzadAm/wCiNMgNYR3/nIeQBnX81wZAtgA3n4/0Juaj8Yh8LgDHs/WnADBBAI399+X/7zwZ55O/s7mGvaPTyu9DJSALoEQDuvjn5gtpkGO+WP4BYGFpsWLCEhrU8R8qgdQSfgiATBwnggg4v7nD6spyxXyc8KYL58RLcCHkXGjLb3Q9yMy2PuhhdH078Xv6XJaAz3wpJZDCf1vmS+G/DQ1i+N/ZXMPC0mKlBHIvQScCQKmTDdCF+Vzt4yPcBZoL4XJ0hfObuwqJMc3DxyE+AIB/VroEUvhvuwB8/NfBpYGrxZvwH9qBcjSoBIATLMn3GbCE+WQLra4sTyzeZcIQ6DtNBXDxIA3oM19q++XyX8J8pfkntMV/KQ2Mtbay9biahzdTaPE04VTzcfJH17eouwEaj39VzOEiKUeAVBNK86WWQEn++bxTC0ia33X9ze9DuAY+o3bBf0iDuvEfAkADSyMR8fwITJrPZ8CcANQmlt2E/vl9X6x9pACcfMlHyIQu/mICkMK/NJ/PLLn8hzTg/AMoqkEJ/qUWdSXgvQTixOcsPmf7jT2GlUd/l6OrYuNLHuTfpAb0lUDuDpTD/zQ0kDoQvn0eOrnKPQGq499VAq4iiNoBYhuAH0HJraYL89OTz9C5O92YDvq97DN419NF3sJtlUAM/9J4xAHXINd8TQLA59L02UcK/001iH4QJhctzUemK0FACik+7A+3i88j1oBtt6+rCMgQX77/6OQdHK4Hzaerd4BidIgtgaQAyIVK7G5tdCZAifuJEuS7dqGmO1BOGUyDe9erEl2NW2oHSg6A78FOW4abRcTsRm3sQL65zFLxTEMD8mVOEJMCMC8Gn9XdR3Upv379jzDFfJeVBkChAVAoNAAKhQZAodAAKBQaAIViDvAPhJvy/RFPr88AAAAASUVORK5CYII=",6,16,16)
+global.rebelhurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAGAAAAAgCAYAAADtwH1UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAACT0lEQVRo3u2Zv05bMRSHv/MaLMmCFJYW0alFqSqxVCpT1y4oqHPVgaXMeQAeIDwCE5UYkSIKC4h2aSQ6kAX1CTp0MUsdOc69aez4JCDOma7uP9u/72ffc3zFOYfF8kIMgAEwABYGwABYGAADYPF4AFQ9JAvrtMhE+845eQoAZrlZtIW/Pjvm8vQIgBdv3gOwvrm9UBClTJACIHWqSOkB97odBjdDWquNkfDACAbA7v6hKojSJpgVQM46JaVcVSd+LICP9c3tPDf+a7/uWQ0T1AEo8WWW1MG3Ww0ANporo/MHJ+cA7O1s0VptjAS/PD0aE+D5q3cAfP/2NQuAiLhPb19ycHJe+ayWCWIApVIiSXWdFz8GAHB1e8dGc4Vn7TUABjdDPnz8HA507vZ9H/qD4Zhw4XUNE4QASuajkuo8L3QdhCoQwVSfu33/7nDWAYR90zCBFoBsCLHY8XEYXgyAzpceAK/XmhMuTgUwzQilTeABaFRjkip+lfP8+XarUQkhFMYLVreOzwK/TnwtEzwIAFV5dJwR7e1scXHxq1KYqg93DoBQ/PCdV7d39AdDFRP8D4A8tBoA4O/vP7X3pog/bQmMszAtE2gAKF4AiYgLMxCAH/2fRcSfVoOEs1LLBDEAicSWzBRVBUKv25nIv+PY3T9UqYK1TFBViLkaEZe+DF2fHY+V/GH0up2FQChtgnn2giTxelEA8QDjJUQLQGkTzLMbuvDtXy9A7l6Pdvs5Jsj5H+CWBWCWDbPH1r79EVtyGAADYABMBQNgACwMwNOMe/wTGd/ytOG3AAAAAElFTkSuQmCC",3,16,16)
+global.rebeldead = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAOAAAAAgCAYAAAALxXRVAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAEx0lEQVR42u2bTUsVURjH/4ciKI0uJCQ3whtUKkTaDaEXrMBNkKu2bcxoLS3cJK3CVSs/gNYXKAgK3ASF9AJibwRpBiWRGLgwMoMoptU5PffcMzN35rzMNZ7/6t6ZufOcO+f8nreZEVEUgcViFSPBALJYDCCLxQCyWCwGkMViAFksFgPIYjGALBaruQA0/UgEG7QQdfajKBL/2dxE2nWNQl9nVvMB2MjBwjd4r57cx9yjuwCAY2cvAAB6Tw0GBTGAE4iKuMas5gUwa6gUrhf85Pgw5heX0HWwQ4EHQMEIAJfHpryCGNgJRCGvcZKTkf9JbvsPM46mBjBPnipsJpxOfBx8OgBSvacGcy2QtMVVkBMoDEIhRNTf1YGZ+SW1TX5nAP0C6KIzI/JMNgBUK2W1fWL6GQBgdGgAXQc7FHBzj+7WANBz8jwA4PXTB7kAFEJEI+dOYGL6mfG3oZxAM6Wkck6qlTJefFpGtVKOvT4sNwC6aomKLJMsPasUBRCAmvwj/d0AgPnFJVy8cpUudGv7cd6d7vftBCwg9A4gdYjNBKApTd5MY6AAurwfkQmAkXMnFGhxEJpAJKmetX15bhp1AYCOzZcT2MwA+qgJ6Tnjzm9y3DRV9g0jha691Kq2r6ytZ7LvC8DcEOqw6Z+pJAwAMHxtEgBwuruSqUYxAZjkCHw4Acc1obMxxDlHvSbUt9lCoNeeeh2qg3f8+AEAUNmJz2acBE9C17azBVu2bwUAlHb9A/Hx7EJD9iWAPu7Gi6yTbIo8crvuiU3RUQKTJU3S4Y+Dz6cT8AigFYjUOZlUrZSxrX1H3eK3hYD2A5Ik7esNMdoYuzw2ZT0PcdFOwlfa1Yq28v66360uf8Tj2YVE+00BoMlj6h3R0aEBPH/+wQiGqXGTB0B9odGIODO/5M0JBADQOYRpi98WgkYd45H+7rqGmCwRpG7efmjVFafRbvX7D7TtbFHH7G4vKfhWlz+q7Wvf1tXn1++/xHfWUwAUOSfd2z1AAPi1shF7bJ6Fb0qB6fl8OwHP4DmFsJHF7woCkxP+tbJRMw4ageMcQd6ueHupVcH29vNX9Bzaiz8/f9dASNNPUxQEgDv3poMC6NzrCyEi2oEEgDcz75zAFzfZelT27QQCwGcFYN7FbwOBbl9edzqGS9fHUn+fF0D6vefQXgCoA7CzejT1XFkAFNpkiyKK/6QomORxZd3hI/UL4QQ8gpdrXuQiTFv8cXNBI6FNGjg6NKA6zrdujNfsT6pBbW1L+2f6OlV0W3jxsma/qQFDtfZtvaEU1DTpwnIxOE9DXz25rzyarsnx4SAQBnQChdXl9L8C/x4yiFv8Eg4fUYheb9MYaBrsOvrq8JkApDWgTQTMsyBExv1OAYy7L2Rq6GxSJ+DrPTHhY/GnRcE8HVFTWaDX6nIMSfZturH6tsP79hgBpA0YXUm3JGzehgj+1IEEwNNTJtb2HTuBwgFsZPFLpUUh2zowqVnmMwrq9nUAbaNgnvcBC30vrein8Qu2H4WAL+2/UwguXR8zZgN6ZuCqLDCNQdbevm1T+zqIbz9/NR5/pq8z8V4gvxG/ORWFhi8tOqYO2NMTKUXYdmmfAWSxChQDyGIxgCwWA8hisRhAFosBZLFYAfQXSWbj7ll5bLEAAAAASUVORK5CYII=",7,16,16)
+
+global.allyidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAYAAAAVpXQNAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAACyklEQVRo3u2av0pcQRTGz0CewiYWEVKKNhvSBLZJkSqtBBbFSkKwsEptlSoPoOQJrCzSCMIiSaOIjRe2cZs8RWBSyFmO45y558y/3RvmdMry++Z857t39s5dY62FVq1iy7QAtWoBog0ZwzZkrTWrzq+lUSxAQx0Acr+8fwM3D3+8n5l282gNygcAr0YKv5ZG7hksAlRzALn5xhiLpmNRjWk3TzLKx6caLj9XDyU0cs/AWGt7B5DawLL4yLy9OofryzMAANh+9xEAADbffhDrcMP9/vMXAACcHO962Zo+JBrIj9HQXmTidXMBcoeQ0kBJfsj4o8kYdvYP4frybMHGIGHtfT2NWj/yX2+8XITHZUv5Eg1u/Sk90IDeXp0/+b/Y/1CAcjVQkq8dLg0p6mnX766bY0v5NTRCPu3sH7Le9/rPBcgdAlZMAyX5HBu3lW42fxJQypPesn3DpXwcAB2Chh+j4fJjenD993nf638oQLkaKMnn7m64RU4+jZ9dTQAAf0ePf7/4nbYFUz5ds4ZfQ0MaUM571n/6FJbSQK4haw3iwkmfNnxPYZpHWJ/5Ofk1NCTzdYMjmS8bIEkDvsFptplcBrl85CF7a30tyMTPS83PzV9GD5z/oQvdx2cDNKQhUDY9N6HnHX18Lvw1+LV7iPGf43sDNLQhSNhYnEbq2lP4q9LD1vpaMEzJAVrVIfTt73fT+6irqxa/dg8h/znv1VuYtgHtFlaSj4aMRq8AABZPGJ/3Dp6ZJPl+UoNfWkPqv283CH59oC9Thz4E+pLQPaBMOcWN5XezOXz7caF+LcNp+Nav0ZD4rz7IDb2N72ugmz1+c9eYVJpPddzXI7n59PifY8fyNRrL9D/4eyDaAH03guI5DWr8YfJ7A3RyvOu9hRlj7NFkHL34xv8/+L0BCh3eSd7xSG6njT9cfvtNdKukagFq1QLUann1D2th5Ryqdlo0AAAAAElFTkSuQmCC",6,12,12)
+global.allywalk = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAYAAAAVpXQNAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAADO0lEQVRo3u2aPWsbQRCGZyG/Ik1cOJDSxM0FNwY1KVy5DQEh48qY4EJValWpREipYEivyoUag0AYpZExbixwYzX+FYZLEfYy3tuPmd1ZOYKdRgikmZ3nfWfvU9V1DSVKxIYqBipRDFTi/zOQUsrprLqu1UY0l7EHV+5NYSPVQ8tAOumXjx/g+uHR+qfZcpVNAAlBcvaAcwNAK78Em3XySe3hmYGUUrVOqgMnny1X2Ravc48GPdjdP2x+v7N3wKoX6iFFbFtuWw+5+QBAw0iCT4qJggYCABhO5tnE1fn73Q68e/umyb+Yjlu/O/r6M1gn5xBQ+OQQF/PB+U1GsXwwJy6foIFyi2vC0YGNqmMxHQfr5BwCyvqlxXXxcTHa2TtI5sMZAq+B1iHucDJvFr28X8Gn47NWTs5xP+cQUPlIimvyAYAgoxQ+3CEIGmgd4o4GPVjer54JgXM/VX8/X/3m7xIYDq4RMwQUA+G8UuLa+MQyCvEBAC8jcwhI50DXD4/Q/dxJFpdSw2ZKztWHawi0AHi6XLWouc31V9V2A19qACgn65J8zB0otEkEdyB8OUxZOHfKzBrvt157c+t1cEXGQ2BCwQJ7j/eOHYLLKGYXojKK5cPZKHAPXgPpxUiJS6kBAME6w8mcNWE2gUNXIlQDcRjF8IlhxOHjYkTl4zQQ3i6lxKXW0OGqxQHEHQJffltuLiMOn1hGXANxGeH8bAOliEupIXkI8wnsq5VqoFhxqTUkd2hfDxQ+rJPo29md+CHMrLG7fwiL6RjOf122muDmj4HDPYRxGKXw0f//PvrRfD89Omn1IrXDUflYn4WZAlTVdnMJnyKur4YGY7s/oy8vv51fRl/FmALbQMWew5mMYsWl8DFvO0jxMRlR+VifxuMHeTdXF60Fx4prq4Hz47ueOPrdf1cGXEg2ASRMir/jHsz8qXzM0HfSbazID0ADmwSnD+/rHBxxuYBsoHzHbS4o1xDYDKThxPbhe3Le73ai2VB46e+pazbv1FN3OK+BRoNecy/AdU7Adf9LBOXViBxCS+dcJ6Obq4vWphF8FmZLuEkvSKXCk+x1k/lx1l5eaS2RZrZioBLFQCVeLP4AVeRMHFQ8XBkAAAAASUVORK5CYII=",6,12,12)
+global.allyhurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAEgAAAAYCAYAAABZY7uwAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAB1ElEQVRYw+1YvU7DQAy2X4MFBpAYK1hauiB1KVInVoRUtWJCqDAwMXdigQco4gk6IcGCVCkCpiLEQqQuZOE1zACOrvm53CXnJkM8Jpcv/j6f72wjEUFt6Ya1QHYC6dTCwj9DTMUnokris0Cm2wiLOD7qtuD9+ydxjecH+UkI4iPlyzG0cX7UbS09i5Lw/CB3tMXxqfghhLYEmAQ7PhkPYHf/MHzXaPeMyYjjk5tTGm0J3D69wWW/A9tb66Hz89k0tm54daclIY5P7q4xNCWgOq+aGmW2+WyqJSGOX5ZAk/EAAAD8RQBHJxdJDvP32lQQxy8rxfic6B93lrb7v7PVwSe3lSKaRli9lhNumShGapTF8S3rICdpxk4zgZ2Ntdg3N4+vAABwfrAXrjdNM5f4KxeIaxSVAAAkkojuChOBXONXRiC2NCJFBcqLX0qKRQ/RT+9LC2qbYi7x1WZ1ZRU1R7XZ3AQACK/hs+FpLMpZ4kjj23TzhXsztdvOqnL9xd/Nc33/bNw7SeDr5kEkIZJK5uPlIdYbqQTZbERyjW8jEFq+zyTATWSj3Ys5GJ3t5BHIBX7WRJFcDszSSGQ1jGXim4xcSUogNZISArnAr2fStUC1QKL2C5n/Oe+JJ034AAAAAElFTkSuQmCC",3,12,12)
+global.allydead = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAYAAAAVpXQNAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAADx0lEQVRo3u2aQUgUURjH/4+6hMoutKgoYcKaClmSBGsiCV4MPHmVQBRPEebBk2dPHWrPonTxqCAE7SVQpPYgRqXgmkKJJAp7UNSCKKZDfuPs2zdv3uy8N5rM/+TurP/Z+b7f+7553yyzLAuRIpUqFgEUSSdAMppY4JMx5upvWdaF94/kDpBqGWJBEjvS044P33aFn1nKbZecZNP+keQAldLDmJ/kjvS0F7zHJ3kpt11ytTDtH8kMQMowiRJMSabETk0Moq2rzz7W2tGrnGzT/pceAEnbV7kN0AGQFCK3BKczWYwNdKOpoc5O7srCXNHnhsanpUk27e8VU9PV2/cXUrgWp+/tG1XK3ms7+0Xn0AWQa2BECXYm1ylnlSCtLMxJk2zaXxM0vuJFf4sWhpfSmax7tTj19gONG0jkf24ATU0MAgBym9voHx4VJZT+X7qyTPsbAEcYM+dGQIfSmWxhpWDMqo6XI1FRFtjbBEC+Wwzdpww87i5oJ6fJvDD+BuGxz8sYszqb6nDvZo02YxFAQSuP6QokTIRbhXBuuwW7JN5DWpZN+ocFkK7KIwJIZ/URARRKX3cGiJJKCRatvJdv3gMAnj16YH9etY1p9jc5qmcmqs+lBohmNM4EA/AMIF+SQ/SPAPofACK5BTIoQAH8Ly1A+aMTAECiogz5oxPsHRz7HhWcSwvjb3I/L61LTf22MM3+5wKQs3KK7uP8zoNEEK3t7IPeyx+doLGhFgeHx4jHypGoqS/yzO9+xeLyhhAgHYFSnhhTcFKpJADY2+ynQ0+KqoQXPCH5G9/C8xClM1nQe7QQcpvbBYNRkWRzLX6AyANUVRlzhYc0O59xBShIoJjicrP9vabEuc1/K+75q7fKQz7D/pYpgEQDRB6gVCrpCQ+ptaNXWIEe3m8EACwubxQME6mVVVXGAADJ5hah79b6Kj59+S4FKEjAmM/abX1899q+YF5jA2fzGz8QGfI3XoFo8Dk0Pg1+Rymqpm6amXwhvB4CiKrL7HwG1fFy+3iiogzXq+NI1NRja30VABCPnR0/ODxGsrnFswLJgsZ8HvdMMD3kdFsxsp4esn8oAFF1ae3oRWdTXcGN/53OZrR19WFm8gUAFD2moaraPzyqdL0AcPdWLf78/G2/JoBk8gMQHzjtT60pcAEfaIbhH8pjDL5C/tr7Yb8mgFQkAsir5VNLu3LtqrYWxgfPyM8e6CJM/azCoL+lAx6V5DpFrc5NpS4W5/noXokXvwNTBSiSXrCYjgWhun3XeQ633wNFKY9UOmwRQJGC6C+YaoH+BJUIjwAAAABJRU5ErkJggg==",6,12,12)
+
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		enemyrebel_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define enemyrebel_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	hitid = [global.rebelidle,"LITTLE BANDIT"]
+	spr_idle = global.rebelidle
+	spr_walk = global.rebelwalk
+	spr_hurt = global.rebelhurt
+	spr_dead = global.rebeldead
+	snd_hurt = sndMutant10Hurt
+	snd_dead = sndMutant10Hurt
+	direction = random(360)
+	gunangle = direction
+	mask_index = mskBandit
+	spr_shadow = shd24
+	gunsprite = global.rebelgun
+	size = 1
+	team = 1
+	maxhealth = 80*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 0
+	target = 0
+	targetvisible = 0
+	fire = 100
+	walk = 0
+	raddrop = 16
+	on_draw = script_ref_create(drawenemygun)
+	on_step = script_ref_create(enemyrebel_step)
+	on_destroy = script_ref_create(enemyrebel_dead)
+	repeat(random_range(6,12)+GameCont.loops){
+		enemyally_create(_x, _y)
+		}
+	return id;
+	}
+#define enemyally_create(_x,_y)
+		with instance_create(_x, _y, CustomEnemy){
+			hitid = [global.allyidle,"BANDIT"]
+			spr_idle = global.allyidle
+			spr_walk = global.allywalk
+			spr_hurt = global.allyhurt
+			spr_dead = global.allydead
+			snd_hurt = sndBanditHit
+			snd_dead = sndBanditDie
+			direction = random(360)
+			mask_index = mskBandit
+			spr_shadow = shd24
+			gunsprite = sprAllyGunTB
+			creator = other
+			team = 1
+			maxhealth = 8*(GameCont.loops*GameCont.loops+instance_number(Player))
+			canmelee = 0
+			target = 0
+			targetvisible = 0
+			fire = 100
+			gunangle = random(360)
+			walk = -50
+			raddrop = 2
+			on_draw = script_ref_create(drawenemygun)
+			on_step = script_ref_create(enemyally_step)
+			on_destroy = script_ref_create(standarddroprate)
+			return id;
+			}
+#define enemyrebel_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && !collision_line(x,y,target.x,target.y,Wall,0,0))
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if fire > 0 
+	fire-=1
+	
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 4{
+	speed = 4
+	}
+
+if targetvisible == 1 and random(35)<1{
+	direction = point_direction(x,y,target.x,target.y)
+	walk = 14
+	//sound_play(sndCrystalShield)
+	}
+else if (random(35) < 1){
+	direction += random_range(-90,90)
+	walk = 35+random(14)
+	}
+	
+repeat (1) {
+	var dodgethis = instance_nearest(x, y, projectile);
+	if (dodgethis == noone) break;
+	if (dodgethis.team == team) break;
+    var dodgethis_x = dodgethis.x;
+	var dodgethis_y = dodgethis.y;
+    if (point_distance(x, y, dodgethis_x, dodgethis_y) >= 100) break;
+	var projectiledir = point_direction(x, y, dodgethis_x, dodgethis_y);
+	if distance_to_object(dodgethis < 100) {
+		direction = -projectiledir + random(30)-15
+		walk += 1
+		if speed > 5
+			speed = 5
+	}
+	if (random(16) < 1 && abs(angle_difference(projectiledir, gunangle) < 100)
+	&& dodgethis.typ != 0) {
+		fire = 5
+	} else if (random(5) < 1) {
+		var _furthest = instance_furthest(x + random(120) - 60, y + random(120) - 60, Floor);
+		if (_furthest != noone) {
+			walk += 1
+		}
+	} else
+		direction = point_direction(x, y, dodgethis.hspeed, dodgethis.vspeed) + 180 + random(30) - 15;
+	}
+	
+if fire <= 0 and targetvisible == 1{
+	gunangle = point_direction(x,y,target.x,target.y)
+	direction = gunangle
+	var luck = irandom(3+irandom(3))
+	if distance_to_object(target) < 75{
+		fire = 25 - (luck + random(luck))
+		gunangle = point_direction(x,y,target.x,target.y)
+		repeat 5 + luck
+		if instance_exists(self){
+			with instance_create((x+lengthdir_x(4, gunangle)),(y+lengthdir_y(4, gunangle)),Bullet1){
+				sound_play(sndEnemyFire)
+				hitid = [global.rebelidle,"REBEL"]
+				damage = 3
+				team = other.team
+				motion_add(other.gunangle+random(20)-10,8)
+				creator = other
+				image_angle = direction
+				}
+			wkick += 5
+			wait 5 - luck/2
+			}
+		}
+	}
+	
+if random(200-(GameCont.loops*10)) < GameCont.loops {
+	repeat(GameCont.loops)
+	enemyally_create(x,y)
+}
+	
+#define enemyrebel_dead
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}
+	
+// ally
+#define enemyally_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = -1;
+if(instance_exists(target) && !collision_line(x,y,target.x,target.y,Wall,0,0))
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target >= 0 and targetvisible{
+	var p = instance_nearest(x,y,Player)
+	fire -= 1
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+else if instance_exists(creator){
+	if creator.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if fire > 0{
+	fire -= 1
+	}
+
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 3{
+	speed = 3
+	}	
+	
+
+if targetvisible == 0 and (random(50) < 1){
+	direction = random(360)
+	walk = 25+random(10)
+	}
+
+if instance_exists(creator) and distance_to_object(creator)>70 and random(15)<1{
+	direction = point_direction(x,y,creator.x,creator.y)
+	walk = 25+random(10)
+	}	
+	
+if fire <= 0 and targetvisible == 1{
+	gunangle = point_direction(x,y,target.x,target.y)
+	if distance_to_object(target) < 150{
+		fire = 14
+		with instance_create((x+lengthdir_x(4, gunangle)),(y+lengthdir_y(4, gunangle)),AllyBullet){
+			sound_play(sndEnemyFire)
+			hitid = [global.allyidle,"Bandit"]
+			damage = 3
+			team = other.team
+			motion_add(other.gunangle+random(20)-10, 5)
+			creator = other
+			image_angle = direction
+			}
+		wkick += 5
+		}
+	}
+	
+#define standarddroprate
+with instance_create(x, y, RadMaggot) {
+	maxhealth += 20
+	my_health += 20
+	image_xscale *= 1.5
+	image_yscale *= 1.5
+}
+	scrPickups(50)
+for (var i = random_range(-44,0); i < 360; i += 45) {
+	with instance_create(x,y,AllyBullet) {
+		sound_play(sndEnemyFire)
+		hitid = [global.allyidle,"Bandit"]
+		damage = 3
+		motion_add(i, 5)
+		team = other.team
+		creator = other
+		image_angle = direction
+		}
+}
+#define scrPickups(_dropchance)
+    with(instance_nearest(x,y,Player)){
+        var _need = 0;
+        var w = wep;
+        repeat(2){
+            if(w = bwep && bwep = 0) _need += 0.5;
+            else{
+                if(ammo[weapon_get_type(w)] < typ_amax[weapon_get_type(w)] * 0.2) _need += 0.75;
+                else{
+                    if(ammo[weapon_get_type(w)] > typ_amax[weapon_get_type(w)] * 0.6) _need += 0.1;
+                    else _need += 0.5;
+                }
+            }
+            w = bwep;
+        }
+
+        if(random(100) < _dropchance * (_need + (skill_get(4) * 0.6))){
+            if(random(maxhealth) > my_health && random(3) < 2 && GameCont.crown != 2) instance_create(other.x + random_range(-2, 2), other.y + random_range(-2, 2), HPPickup);
+            else if(GameCont.crown != 5) instance_create(other.x + random_range(-2, 2), other.y + random_range(-2, 2), AmmoPickup);
+        }
+    }
+	
+#define drawenemygun
+if image_alpha > 0 and "wkick" in self{
+if gunangle < 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+	draw_sprite_ext(sprite_index,image_index,x,y,right,1,image_angle,image_blend,1);
+if gunangle >= 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+}

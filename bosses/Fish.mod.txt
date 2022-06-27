@@ -1,0 +1,315 @@
+#define init
+global.fishmenidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAYAAAAF6fiUAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAACIElEQVRo3u2ZTUtCQRSG35EW1lqwVdBGyY24iP6AQogt/R0XwVXQymiTIP2Glm4CJYrbvg8XgYtMN0ErBX+Aq6bVvU3XuZ8z5xo0Z+Mn78x5nzPjmZFxzmFic8EMAAPAADDxhwEwxjgAcM6Z+NxYp8efSAAm3RwO2ku83h6iUh+5n+kAQQ04DX0VfyIDuL7fQbOVR7+3cB8v7E/lZLwJOLo6AVMXkIo/gQAYY7xqFZGtFdz3Opk5AKDfW+CltI2Hq6lSImkBptD3+nP5/ohVaT+WP74AZOaL0cnMcfa1i5U9SwzBb4xOZq4FMGUBBfnjzH9slUP9CQTQGJ64r1f2zBfGsDGInYQ3AWp93QXk9cdPP2z+oQBuzgcAgOOjovR7d89TbD3F31PT0qcsIB36awCcTgEAxAHE/U0W2bcPHLSX4T86xPrUgL3zV9WXAph0c64ZzjJy9jW/aLbyqNRHkQBQ61MXkGz+SfWlWxBjjJ/W9gAAY6usvUIp9akB+80/qX7kFRAWUfdRav1NAda2AsQlHNRFqJhDrU9dQHHnH6Qfeg4AsDbIyp79kK0VtLeJKvrUgKP4o9QFxe3TVfpoHQkk0acoIEczWyv80geQ7CAmtnKOybKoWkUlALIEdAIW9WRFpHqSV/UnEgBZhTgJql4VUAFOU3/YGKz1+aI/QWeMUAC+BwgNV7vifi0DrHprmZa+ij/mH7ENhwFgAPzv+AYlajD+YEfV7gAAAABJRU5ErkJggg==",4,12,12)
+global.fishmenwalk = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAYAAAAVpXQNAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAACxElEQVRo3u1avUpcQRT+RiyMtaBVII2LNmIRfAEXREzpcyyCVcAqwUZhyTNYbiMoomx6NRYBi5jdJpDKBR9gK6/VXGbHe2fO/JzxqnMad1d3zrnfz5kz9yqKokCOHL4hsoByZAHlyAISQhQAUBSFUF9nipqNEUlAKQoXQhR3h3NY2n3A77PPWN28KX/3GoT0XjEiC4i7cJnj6GIW2zvz6HVH5c/9/v+gPG+BXFl30zByEhBH4XL99U4LM+3F8rNvU/cAgF53hF/LH/Dzx8A7z1sgd73TAoAJjCROve4It50VnG6dJMfIKqAU5Orr6wDtPS5g3B965+HubpzkmtbXMQrJ4WsAo4BSkbt1+qV8P+4Pa/P5AMRpgFTk6jliYhRqAKuAOMlVcxx/PwEAbKy1Kv/u/HqA6Su3bYfbANzk6jnOrwckjFzxCTEASUBc5MrXqkgP/l5ivPyp9nszf/5hafeBNuAl6m4c5OoYqUawYbS6eUPGJ9QAlQJKRe7d4Vy53t7jwkTbrIvtnXkngFIYgIPcEIyoc52LAQBUdulaAXGTK/N8bX8EANx2VqKJtMkGcB3afTCicBDLALVbGBe5NgJsQdlqmmyAGB0oFJ+YBnDqQLGKNznAFC7DbhMN4HNCkviUNRpmFZ/1Qw1gnYG4yFXX108B4/5wktj24sRntjwpDaDWL2vkOKlW8aCKyEc8MQxg3MJcyXURkO34qANFGehsBjCdMEKP8jaMQu4Sq9ekznSSVJ876lUGUGundjergGwEywtwvQj9iK2uQw3KLKQf459tWxpwriKqIlYVashNVkq+0McXdbuMKiRTDqOA1CJ9SaRuZRxPk6kiVWeMkLvSdWvHFBAHdlVCojYGq4BCW+9LBwVo2W1jdwou8XBiJUVEPs2ZBMTVGZoqspjX+lrxc+1s+V9ac4QJLgsoRxZQjheLJ0DPQA3NeYEHAAAAAElFTkSuQmCC",6,12,12)
+global.fishmenhurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAEgAAAAYCAYAAABZY7uwAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAABxklEQVRYw+2YMU/CQBiG32NCZxKYTFxQWAyD/8AuCCO/A0mYTJhIXCSp/gbHbtKYmLqbyGDiIMhi4gQJP6AT59RSLz259r6jDL2llzb39nufa7+77xjnHHmTN5YDygEZAxQ8YEKf5sWMcQDgnLNof9/0VQDFjqMwMB2VUOuv8P50jkZzsnkxASgq/bSAtCEFBh6eD9HpleHYy/B64/1oQ6LSlwFSTUwsbfAX3RMUrWp4b1hYAAAce4m3+gFe7r9SQ6LUjwOUNGsz3eCjbVhYYLCuwPfmqSBR62cCqOW2Mb58BABYV6dSM25rnAoQpT4FoESQ4gzENe9uBsZY8qRKrB8FpLshYirLLgC03HZ4/3b2Cr9+LB1X/PxGrb/aPtOG9HcKaDoqhcEO1pUwJzj2Ujqu0yuj0ZwoATKhL/5i3BSgwMS1dQQA+OiekQIypZ/5F0T5i5nQpwKkNLtB/79lWFxlVJO0Kf1MVjGZAd+bb2bWqiYCZEqfCpAyJNGA782lsx0YSrJhpNbXLTW09kLRQEUTwU43VYFJqJ95LSYG+icIglpMV1+1mic7pxFN6BSlu9DfdqLITQESD7X2VT8/cs0B5YCMtl+sT+DgPEWDLgAAAABJRU5ErkJggg==",3,12,12)
+global.fishmendead = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAYAAAAVpXQNAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAADX0lEQVRo3u2awUsbQRjF3xgLqVhMUVAwWjw0VhGKB0ugVwPFxqP9L0oq5FTwJHhRsKV/gjellyptZXstkXootBLTFCpNI5g2YsSie2jcHsqM4ya7md2dMUrnXRI27NvNvt/OzPftEsuyoKXlV0QDpKUB0rqUANEfiO27nAMTYgGAZVmE/35V/LXEAaq7n4yAtxe6MJQu4+PrMYxObJ4dWELQqv21ggEUGCIa8NJ6G6amu7GyWGKfc0YhcMiq/bXcARJdGBG/4Y6nBhFOxNi22ZY9AMDKYgkfhq/j3fMvvkNW7a/lDpDXVTUJGi6v2ZY9zJz2wDTyvkJW7a91CQBKrk1i9eErAEDiyR3HsNeSq74AUumvJR8gTxDVC7iejGc5EEI8L3pV+2s5AxS0IUREymoASK5Nsu3zuQzM4QHH/cLZHQylyw1DVu3/3wDBXUeRa3KhAG0vdLEwZ0572JpkZbHkuN/UdDdGJzaFAFLpf5VD9uIHAI/iYSxvmEJtD/sUZqkCiJ7o00Q/AOBT6q70gFX7NxsWXrTHFQQk6t07EgEAhKIdAIB4pYTlDZOBJApQU0YgmVOYSv8A8tXFp+GOpwb/naetEJjPZTCULjOQ/BQbdnCoqsVD3G83Ub15Ay/f/HIFVBZAxMud5FZm26sk4blYsb8AIFILDSdwqEwjjxd9+zCHB1iXXfR/uMHDa4wcI3RwhPe/w9jdqtT1b0oV5hSwaeTPRoZEzFfAqv1VXycReOx9rXB2B49/dAr3tUQBildK+FpsBQDsj3Si8PZ7jb8sgIQhsgdsGnnXuwyAp4afan/Vo7VXgOZzGSytt7F1X6PeFiHE6n9wi01VVKFoB6rFwxqgxsgxAGDTahMG6MJ6QXyQ9otFO8V+FomK/WW8/0IanTeFO5yIsccwdF1XbxSiv7sBxMPDr3fifdcAAN8+n+BnpPUcRHQU8jICKZnXnUYJe5DnTkLCszDJ/rJeniKNoOchupc9YdvoKMP3u+goNGcU3Be8DhXdaLQdAHA7+oeV73SKo9rdqtS9bqJP46VXKDRkVc+jFPjLfPOOiIbLi78p6AJaRlXJH7t3JMIqMLtCB0c1ZX2jNxItVQDxJ66qhJbsrxSgID0h2aO3F1/9SqtWsDtBA6SlAdJqmv4CM0rR72NParEAAAAASUVORK5CYII=",6,12,12)
+global.trident = sprite_add_weapon_base64("iVBORw0KGgoAAAANSUhEUgAAACkAAAALCAYAAADiBKTLAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAA40lEQVQ4y9WVPQrCQBBG34DkAoY0Fqa1t7AQIWDhGQTtvIGlpYVFbmBnIGewEARr+7RamMoTSGAsJLLxD0WS6DQLOzs7j292ZkVV+XWTsiBFJJNYVaVwyBTiUXIR0ci3qbYtnFb8EjB3yNpwzmExuvN9AgggQO71rnf67DchKXTQhWbPpjE+Po0x4QXQyLcB2C6PTE59ABLXywRVdmsS13u6muemVgjAYAVBl+ud6X6zd1HylTmtOFvu20ech5KJ6zGLR1fwFPYdNQvpblMEVZWfaRwT8NsOlzKH+buzUv7hxzkD0YOE7WWK0hQAAAAASUVORK5CYII=",15,5)
+
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		enemyfish_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define enemyfish_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	hitid = [sprMutant1Idle,"FISH"]
+	spr_idle = global.fishmenidle
+	spr_walk = global.fishmenwalk
+	spr_hurt = global.fishmenhurt
+	spr_dead = global.fishmendead
+	snd_hurt = sndMutant1Hurt
+	snd_dead = sndMutant1Hurt
+	direction = random(360)
+	gunangle = direction
+	gunsprite = global.trident
+	wkick = 0
+	mask_index = mskBandit
+	spr_shadow = shd24
+	size = 1
+	team = 1
+	maxhealth = 80*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 0
+	target = 0
+	targetvisible = 0
+	fire = 40-8*GameCont.loops
+	walk = 0
+	boosting = 0
+	raddrop = 0
+	on_step = script_ref_create(enemyfish_step)
+	on_draw = script_ref_create(drawenemygun)
+	on_destroy = script_ref_create(enemyfish_destroy)
+	return id;
+	}
+
+#define enemyfish_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && collision_line(x,y,target.x,target.y,Wall,0,0) < 0)
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+
+	
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 4 and boosting <= 0
+	speed = 4
+if speed > 6 and boosting > 0
+	speed = 6
+if wkick > 0
+	wkick -= 1
+else if wkick < 0
+	wkick += 1
+	
+if  targetvisible == 1 and random(30)<1{
+	direction = point_direction(x,y,target.x,target.y)
+	walk = 15
+	//sound_play(sndCrystalShield)
+	}
+else if (random(30) < 1){
+	direction += random_range(-80,80)
+	walk = 35+random(15)
+	}
+
+repeat (1) {
+	var dodgethis = instance_nearest(x, y, projectile);
+	if (dodgethis == noone) break;
+	if (dodgethis.team == team) break;
+    var dodgethis_x = dodgethis.x;
+	var dodgethis_y = dodgethis.y;
+    if (point_distance(x, y, dodgethis_x, dodgethis_y) >= 100) break;
+	var projectiledir = point_direction(x, y, dodgethis_x, dodgethis_y);
+	if distance_to_object(dodgethis < 100) {
+		direction = -projectiledir + random(30)-15
+		walk += 1
+		if speed > 5 and boosting <= 0
+			speed = 5
+		if speed > 8 and boosting > 0
+			speed = 8
+	}
+	if (random(16) < 1 && abs(angle_difference(projectiledir, gunangle) < 100)
+	&& dodgethis.typ != 0) {
+		fire = 5
+	} else if (random(5) < 1) {
+		var _furthest = instance_furthest(x + random(120) - 60, y + random(120) - 60, Floor);
+		if (_furthest != noone) {
+			walk += 1
+		}
+	} else
+		direction = point_direction(x, y, dodgethis.hspeed, dodgethis.vspeed) + 180 + random(30) - 15;
+	}
+
+if boosting <= 0 if random(100) < 1 || boosting <= 0 if random(15) < 1 && distance_to_object(target) > 300 {
+	boosting = 100
+	}
+if boosting > 0{
+	boosting -= 1
+	motion_set(direction,6)
+	image_angle = direction - 90
+	if collision_circle(x, y, 12, Wall, false, false)
+		direction += 45
+	with instance_create(x,y,FishBoost){
+		depth = 4
+		evil = 1
+		}
+	}
+else
+image_angle = 0	
+	
+if fire > 0 
+	fire-=1
+else if targetvisible == 1 and distance_to_object(Player)<92{
+	gunangle = point_direction(x,y,target.x,target.y)
+	repeat 3{
+		if instance_exists(self){
+			wkick += 2
+			fire = 30
+			walk = 0
+			}
+		wait 2
+		}
+	if instance_exists(self){
+		sound_play(sndWrench)
+		with instance_create(x,y,Shank){
+			motion_add(other.gunangle,2)
+			hitid = [global.fishmenidle,"FISHMEN"]
+			damage = 8
+			team = other.team
+			creator = other
+			canfix = 0
+			image_speed *= 0.8
+			image_angle = direction
+			image_xscale = 1.5
+			image_yscale = 0.75
+		}
+		with instance_create(x+lengthdir_x(56.25,other.gunangle)+lengthdir_y(25, other.gunangle),y+lengthdir_y(56.25, other.gunangle)-lengthdir_x(25,other.gunangle),Shank){
+			motion_add(other.gunangle,2)
+			hitid = [global.fishmenidle,"FISHMEN"]
+			damage = 8
+			team = other.team
+			creator = other
+			canfix = 0
+			image_speed *= 0.8
+			image_angle = direction
+			image_xscale = 0.15
+			image_yscale = 3
+		}
+		with instance_create(x+lengthdir_x(56.25,other.gunangle)-lengthdir_y(18.75, other.gunangle),y+lengthdir_y(56.25,other.gunangle)+lengthdir_x(18.75,other.gunangle),Shank){
+			motion_add(other.gunangle,2)
+			hitid = [global.fishmenidle,"FISHMEN"]
+			damage = 8
+			team = other.team
+			creator = other
+			canfix = 0
+			image_speed *= 0.8
+			image_angle = direction
+			image_xscale = 0.15
+			image_yscale = 3
+		}
+		with instance_create(x+lengthdir_x(56.25,other.gunangle),y+lengthdir_y(56.25,other.gunangle),Shank){
+			motion_add(other.gunangle,2)
+			hitid = [global.fishmenidle,"FISHMEN"]
+			damage = 8
+			team = other.team
+			creator = other
+			canfix = 0
+			image_speed *= 0.8
+			image_angle = direction
+		}
+		with instance_create(x+lengthdir_x(48.75,other.gunangle)+lengthdir_y(30, other.gunangle),y+lengthdir_y(48.75, other.gunangle)-lengthdir_x(30,other.gunangle),Shank){
+			motion_add(other.gunangle,2)
+			hitid = [global.fishmenidle,"FISHMEN"]
+			damage = 8
+			team = other.team
+			creator = other
+			canfix = 0
+			image_speed *= 0.8
+			image_angle = direction
+		}
+		with instance_create(x+lengthdir_x(48.75,other.gunangle)-lengthdir_y(30, other.gunangle),y+lengthdir_y(48.75, other.gunangle)+lengthdir_x(30,other.gunangle),Shank){
+			motion_add(other.gunangle,2)
+			hitid = [global.fishmenidle,"FISHMEN"]
+			damage = 8
+			team = other.team
+			creator = other
+			canfix = 0
+			image_speed *= 0.8
+			image_angle = direction
+		}
+		motion_add(gunangle,12)
+		wkick = -30
+		}
+	}
+	else {
+		repeat 3{
+			if instance_exists(self){
+				wkick += 2
+				fire = 30
+				walk = 0
+				}
+			wait 2
+			}
+		if (instance_exists(self)) {
+			repeat(2+GameCont.loops+irandom(2+GameCont.loops)) {
+					wait (5) {
+					gunangle = point_direction(x,y,target.x,target.y)
+					with instance_create((x+lengthdir_x(12, gunangle)),(y+lengthdir_y(+12, gunangle)), Bullet1) {
+						motion_add(other.gunangle,11)
+						hitid = [global.fishmenidle,"FISHMEN"]
+						damage = 3
+						team = other.team
+						creator = other
+						image_angle = direction
+					}
+				}
+			}
+		}
+	}
+
+#define enemyfish_destroy
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}
+
+#define drawenemygun
+if image_alpha > 0 and "wkick" in self{
+if gunangle < 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+	draw_sprite_ext(sprite_index,image_index,x,y,right,1,image_angle,image_blend,1);
+if gunangle >= 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+}

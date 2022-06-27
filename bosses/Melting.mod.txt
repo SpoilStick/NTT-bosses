@@ -1,0 +1,317 @@
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+
+ // Blood Explosion:
+with instances_matching(CustomObject, "name", "BloodExplo"){
+	if("BloodExplotimer" not in self){
+		BloodExplotimer = 50;
+		sprite_index = sprPopoReviveArea;
+		saveVars = ["BloodExplotimer"];
+	}
+		with(Corpse) if place_meeting(x,y,other){
+			if(GameCont.area = 101) sound_play(sndOasisExplosion);
+			else sound_play(sndExplosion);
+			with instance_create(x,y,MeatExplosion){
+				team = other
+			}
+			instance_destroy();
+		}
+		instance_destroy();
+}
+	
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		enemymelting_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define enemymelting_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	bskin = choose(0,1)
+	if bskin = 0{
+		hitid = [sprMutant4Idle,"MELTING"]
+		spr_idle = sprMutant4Idle
+		spr_walk = sprMutant4Walk
+		spr_hurt = sprMutant4Hurt
+		spr_dead = sprMutant4Dead
+		}
+	else{
+		hitid = [sprMutant4BIdle,"MELTING"]
+		spr_idle = sprMutant4BIdle
+		spr_walk = sprMutant4BWalk
+		spr_hurt = sprMutant4BHurt
+		spr_dead = sprMutant4BDead
+		}
+	snd_hurt = sndMutant4Hurt
+	snd_dead = sndMutant4Hurt
+	direction = random(360)
+	gunangle = direction
+	gunsprite = sprBouncerShotgun
+	mask_index = mskBandit
+	spr_shadow = shd24
+	corpse = 0
+	size = 1
+	team = 1
+	maxhealth = 20*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 0
+	target = 0
+	targetvisible = 0
+	fire = 40
+	walk = 0
+	raddrop = 0
+	on_step = script_ref_create(enemymelting_step)
+	on_draw = script_ref_create(drawenemygun)
+	on_destroy = script_ref_create(enemymelting_dead)
+	return id;
+	}
+
+#define enemymelting_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && collision_line(x,y,target.x,target.y,Wall,0,0) < 0)
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if fire > 0 
+	fire-=1
+	
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 4{
+	speed = 4
+	}
+
+if  targetvisible == 1 and random(30)<1{
+	direction = point_direction(x,y,target.x,target.y)
+	walk = 15
+	//sound_play(sndCrystalShield)
+	}
+else if (random(30) < 1){
+	direction += random_range(-80,80)
+	walk = 35+random(15)
+	}
+	
+repeat (1) {
+	var dodgethis = instance_nearest(x, y, projectile);
+	if (dodgethis == noone) break;
+	if (dodgethis.team == team) break;
+    var dodgethis_x = dodgethis.x;
+	var dodgethis_y = dodgethis.y;
+    if (point_distance(x, y, dodgethis_x, dodgethis_y) >= 100) break;
+	var projectiledir = point_direction(x, y, dodgethis_x, dodgethis_y);
+	if distance_to_object(dodgethis < 100) {
+		if (random(3)<2) {
+			direction = -projectiledir + random(30)-15
+			walk += 1
+			if speed > 5
+				speed = 5
+		}
+		else if (random(10)<1)
+		blood_explo(80)
+	}
+	if (random(16) < 1 && abs(angle_difference(projectiledir, gunangle) < 100)
+	&& dodgethis.typ != 0) {
+		fire = 5
+	} else if (random(4) < 1) {
+		var _furthest = instance_furthest(x + random(120) - 60, y + random(120) - 60, Floor);
+		if (_furthest != noone) {
+			walk += 1
+		}
+	} else
+		direction = point_direction(x, y, dodgethis.hspeed, dodgethis.vspeed) + 180 + random(30) - 15;
+	}
+	
+if fire > 0 
+	fire-=1
+else if targetvisible == 1 and distance_to_object(Player)<92{
+	gunangle = point_direction(x,y,target.x,target.y)
+	repeat 3{
+		if instance_exists(self){
+			wkick += 2
+			fire = 12
+			walk = 0
+			}
+		wait 2
+		}
+	if instance_exists(self){
+		if (random(3) < 2) {
+			sound_play(sndBouncerShotgun)
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle+10,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle-10,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle+20,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle-20,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle+30,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			with instance_create(x,y,BouncerBullet){
+				motion_add(other.gunangle-30,10)
+				hitid = [sprMutant4Idle,"MELTING"]
+				image_angle = direction;
+				team = other.team;
+				creator = other;
+			}
+			motion_add(gunangle,6)
+			wkick = -30
+			}
+		}
+	}
+	else {
+		repeat 3{
+			if instance_exists(self){
+				wkick += 2
+				fire = 30
+				walk = 0
+				}
+			wait 2
+			}
+			direction = gunangle + random(20)-10
+			walk = 10
+			if (random(3)<2)
+			blood_explo(150)
+	}
+	
+#define enemymelting_dead
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}
+mod_script_call("mod", "Skeleton", "enemyskeleton_create", x, y)
+
+#define create_explo
+	with instances_matching(CustomObject, "name", "explo"){
+	with(Corpse) if place_meeting(x,y,other){
+		if(GameCont.area = 101) sound_play(sndOasisExplosion);
+		else sound_play(sndExplosion);
+		with instance_create(x,y,MeatExplosion){
+			team = other.team
+		}
+		instance_destroy();
+	}
+	instance_destroy();
+}
+	
+#define blood_explo(_targetdist)
+	with(Corpse) if(random(6) < 1 && distance_to_object(other.target) < _targetdist && distance_to_object(other) < 300 && speed = 0 && distance_to_object(CustomObject) > 20){
+		with(other){
+
+			 // Corpse Explo Area:
+			with instance_create(other.x, other.y, CustomObject){
+				name = "BloodExplo";
+				creator = other;
+			}
+		}
+	}
+	
+	#define drawenemygun
+if image_alpha > 0 and "wkick" in self{
+if gunangle < 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+	draw_sprite_ext(sprite_index,image_index,x,y,right,1,image_angle,image_blend,1);
+if gunangle >= 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+}

@@ -1,0 +1,196 @@
+#define init
+global.steroidsidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAQgAAAAYCAYAAAAGV2PQAAAAB3RJTUUH4QkIFgMnT+QRcwAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAAChElEQVR4nO2ZzVHDQAyF3QEdcaIBiqAV7jTChXYoggaYMMuMGFkjydo/7FXe4U2STfw9aSXLTrI9vrxtEARBmk4PAIKg6+r0AKCDAm3bzRL44M/2uEQS4NvM96eH29fr86++Pz926vEAv44v2Vfnj/JIvUkr8i1meV7WpMp6jQf4ufmjPVJu0sr88hnJLI/aECI/uoKCD77Fb/VQG3+kwewEMvHLe9pdCDGoPvzuRHqCD75UYdBjrYfZ+KMMZieQhW+xqYGoiazhw9fBB3+Ux+FwGJXErAQy8L39l+vy64t2jBY7+PfJ7/UIJdCbBPgxvvb1RPPVhhB/bjUQ+PfFH+Gxg1sJ9CZxtEH3zJf7r0kruheHFTv41+RrvNHxt3r8h0F6fk+R+d2JFzuJ35nQa+lfnlt8LRbwc/G1XuJrNR6ugfzu3GjgblAWfmuRI3x5N6K9bmkgHh/4efnaucw9eK9WDQit6RsMwgmszrcKYA3bCF8OGW34cEZNA0luhE+P4K/D7+mh3S/0IwxIlMSMBDLxI/vP91QbPh5b/gPDa1TLl7UFfy1+i4dpoF3Fok2qXcW8BHo3KTtf85Pr0QaSgyjKlzGCn4/Pz/u/3vT+yqMrn2xczUQG6U04mWiUHx1AK/J5cY742jDx9t/7q1YOsghfssHv59fUt4cv3zviuyZ0i21tEF/zJlxkANXwoyfAGXxtmo/mS0X2nzy0GtfwLTb4OfmmCX1IHugZyGOtKUcJ8AEU4UdOgOx86/ORBtJqXMP3agv+GvzdyR/gu0Z8QHgNHQn6aABF+JFNAj9eixn1BT8XP2RgAVoaEnzwwV+H32wMQVB+nR4ABEHX1ekBQBB0Xf0A4nn91Z2D/8MAAAAASUVORK5CYII=",11,12,12)
+global.steroidswalk = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAMAAAAAYCAYAAACssfJFAAAAB3RJTUUH4QkJAhY3xnWLygAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAADNklEQVR4nO1YwW0cMQy8DtxRXmnARaSV/NNIPmknRbgB44J9CCAmQ4qkpOWuTw/C9t1CIoczQ64f3378euzY8apRnsCOHZVRnsBQ8o/HU4vq3F4hvgL+tyy+3fP7+9vz4+f78/Pvn//ibo24M/6sB3fB/zbkkw3Gu4/fj88wjs9XNaGKgFXks/C3enB1/G9BvuMcbLLM4biPCXFmHghylQGcTb52L6sVe8CeaXnM7sEsA3BdygA/i3yM/Hi3BFmCIHMYyQNzuKIBWOQbJb4mdOyBxJrl1nKJ9gPPnGkAYfKfST7rfll8A4CB0n6O5KDdeyUD0MiXWgvAYS0RyO+t7YDl5yLohOkzJIBq8vXAx4Jb4HOZHK5uAF7yZQTAcEdBsGdYD5AjOBGy/fcYQK9+1+U9Ba4gH8vBajiCMlMAPfdbYQC9PTdCvtBO7KhZurqHG0wAvZ6wKbTCAELug8WvJJ/lgLLJ1vuJzHnEBTUBnjF9ehEhn3yJjBifrFkTmZYDE4wHE41/meljvXu4E5CFeAofIZ/lRrj7aQ1CF24EmOH+jOgzDUC6n+Z2UfLhd1pOrO9SOIgxm4YM/+g/B6zdPzN9tHcPtwNpje6Rr50zaw3qKR5/nykA/Ju5PQM/agKa+LLkY/hZAsC6pIMyTLQe4G7uXcW0nkdNWDOLlACw8VbhjHxRAnocsec0jXjesRvBQNbomT6R+hkBNOL3yIcC8GBhYYbOzM6f8f6j5ZwxAHwuLYDImGvFy2SzAmj5sFGsuTICN+NF1Es+RsCoANgemyEf1uAlpYUZW4Xa8+j82V6j2bD6vdPHEn5YiVi4RT4J/gj5MScceUyYEcfzEEEj28rpo60hHvLJO6MrSISkjKgzMGdrWHb6WLWHnVc2pke+FaBLUDAHBGtm4yPTB117VHx4BsNhFvmy+TGyzhIYiplxjZmwa9KNkLBHvpWAW7Gy4ZoAtemzKh+NeGcKwOrN7DM9HMSp6LojS4CzyXeVkMTT3g3OEAAjSRX5q/oguYiT131O5tJXANiDhRVnE7HizuqQfMyacKrp1YVfPSpwetXejNZdXsCOHZVRnsCOHZVRnsCOHZXxD+hz51jQUVybAAAAAElFTkSuQmCC",6,16,12)
+global.steroidshurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAYAAAAF6fiUAAAAB3RJTUUH4QkJAiY5/ouQPgAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABqUlEQVR4nO1Y223DMAzUBt2oX1mgQ2SV/neR/mSdDtEFggQ2QOBAnKiHJVJBLICIodg53cMynfR5/UlnxVXXRQ8yXBed0kPXq+IfEt0aM0n/f3/tdf+77bUdzzZkFv5Q0UcbgYR+Lx87UfkU8iKAHItAI4zwwJ8m/BETMGlIFMlvnzK2eSktUo8JnvjTxW81gRFnadMD50QE3B5WxXcRX0YteUsAnT5LAPytqu0gAN9NfBk15C0R8HskL99Ze7WZxCD8JQ1gZHPC4P7L5vUDcjV8V/FzBuRufbyNGSE8j83h9dZeHIm/lAEsdSxhVhuIW4F+oJYMiMB3N4CZgAlkLV2u97bOz700UREC8ae3nq0GsBSxpGEi9THe7vrFqGSAN76bATXtH+s4UAAkqBOn51GA4stQIH6xC+o1yCJcIwIuHP8O0P21TmDvXxBR+FkD9IkeBpS2CdYe6gRa3c6K+NUL9LgLSgKxhyCb6zUhAr9pEZEGsBTq1JZSvCL+IQNGE2wRYIbAEfjNF0QagCJEGDADv+uiSANEhCgDRuOHEDjrNGCZCl/Au9cTiKVtQVwvlyAAAAAASUVORK5CYII=",3,16,12)
+global.steroidsdead = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAMAAAAAYCAYAAACssfJFAAAACXBIWXMAAAsSAAALEgHS3X78AAAAG3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAD90lEQVR42u1bvU7cQBCeDSJdBDUURISCJ0hHsyIRRRCCIqJIEUVCyiskD3B5BSQkREGBKEBRKFCEtrmOJ6AIiCu4mhNdUHCqWcbjtVmvvR6k26/y+X7Gt/6+2W9mvSrLMkhIGFeoQAG4vqQ6u2ilCvGzLBub+AkyAqirFBWLdLe9dQAAePXxCwAA3B3uwvT346iElI6fICOANvyRaoN0R8tToLUGYwxorS35kID4emJhFW5765aQTYgoHT9BTgBtFwYqhHi3vfUc0X5+/WTJd3e4C1PfjgAA4PjdtP0MJ+nEwmptEkrHT5AVQKyqWPmSjxOPArPtizcfcucfLk/sudGPDTDGwNr2vrUnviSUjp8gK4DYLSHlQz7qr8tIiNm3ioBaa/tbPplYOn6CrAC66oeqp8iHcJHw7nDXHiMJHy5P7HtIPJdXryKhdPyEJIDM1V1xgftyxNr2fuE8JaGvACTiJ8gKoMvVMOVrPbDoBAAwxhQIRT9HyccJiCjz4tLxE5IAbOHJsy4Sj2ZY2nYse22MgY2zUa6TU5aBpeMnBBKJLUiGjK2EAAoioBmYEg69tCvzIlHLPr9xNgKA4qKVi4TS8QORNem2tU2+JiQMjb21uZI7v3NwWvsaYgtAgcdjE2X+G7Povz+/CpmW2g5+rLW2dgN/m67UVglAIn5LxO9ECGVrJLTQjykEpVS2tbkCg76BuaVHe3l/dQGT84twf3UBe+fX3tfQpQBU1Z9yDSj20JGAlGC028IzMCfgU4MhHT8C+aMIAsfJ1eGiCSLGoyE86w/6j+M+MzsDk/OL9vWgb+D3zV+v2D5dIBU48CpkcKlVwIvHP3+0PJUrLF3ZODQDScePRPpW7gseuxIBnTF5A4HWQE3uCxIfszzN+IO+yQng/urCfnfv/Bq2NlcqrVGVAFTDGxE80GU2hVoRV5GKxAzptkjH74D4te4NjofL/rm6ZNw+0vGhzYO6q/Kf377OZXcqAk744c0wNysMb4ZWHGiNCvc14tOgrfpQSkA6yK7CNEbLscP44usxVR6fW56yjhm1hLx75rsqj1kfAAqZnx/zmgBnBioCLJRp7Lr7AcQfiaYZifvM2B2JDuKLd+OqRE5nAf5e2VpI6Ko87fC4SO+aCVyvuUXiImgqgE572vQGSfTUO4j/rATgyvIU3PO7BLC2vW8fEef7J3wFwK0Oghe+fAaYW9Kwc3AK1EZxKxSyIyyTEgC9SVKLSpHjP4v1GJ7l+UyHeyNcNQG3QFWzZJUAXKSleD/7slD88hoAiV61g6/plkiRVc2WW4vPLb7PdtMslOR1mwFlDQHvPxM4Rj5NiTZiq7QpPmGckQSQkASQkDCu+A9xkmoNXkB3RgAAAABJRU5ErkJggg==",6,16,12)
+
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		enemysteroids_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define enemysteroids_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	hitid = [global.steroidsidle,"STEROIDS"]
+	spr_idle = global.steroidsidle
+	spr_walk = global.steroidswalk
+	spr_hurt = global.steroidshurt
+	spr_dead = global.steroidsdead
+	snd_hurt = sndMutant7Hurt
+	snd_dead = sndMutant7Hurt
+	direction = random(360)
+	gunangle = direction
+	gunsprite = sprFlameCannon
+	mask_index = mskBandit
+	spr_shadow = shd24
+	corpse = 0
+	size = 1
+	team = 1
+	maxhealth = 80*(GameCont.loops*GameCont.loops+1+instance_number(Player))
+	adrenaline = my_health/(GameCont.loops*GameCont.loops+1+instance_number(Player))
+	canmelee = 1
+	meleedamage = 3
+	target = 0
+	targetvisible = 0
+	fire = 100
+	walk = 0
+	raddrop = 16
+	on_step = script_ref_create(enemysteroids_step)
+	on_draw = script_ref_create(drawenemygun)
+	on_destroy = script_ref_create(enemysteroids_dead)
+	return id;
+	}
+
+#define enemysteroids_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && collision_line(x,y,target.x,target.y,Wall,0,0) < 0)
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	gunangle = point_direction(x,y,target.x,target.y)
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 4+((80-other.adrenaline)/25) {
+	speed = 4+((80-other.adrenaline)/25)
+	}	
+if  targetvisible == 1 and random(50)<1 and walk != -1 {
+	direction = point_direction(x,y,target.x,target.y)
+	walk = 10
+	}
+else if (random(50) < 1) and walk != -1 {
+	direction += random_range(-90,90)
+	walk = 25+random(10)
+	}
+	
+if fire > 0 
+	fire-=1
+	
+repeat (1) {
+	var dodgethis = instance_nearest(x, y, projectile);
+	if (dodgethis == noone) break;
+	if (dodgethis.team == team) break;
+    var dodgethis_x = dodgethis.x;
+	var dodgethis_y = dodgethis.y;
+    if (point_distance(x, y, dodgethis_x, dodgethis_y) >= 100) break;
+	var projectiledir = point_direction(x, y, dodgethis_x, dodgethis_y);
+	if distance_to_object(dodgethis < 100) {
+		direction = -projectiledir + random(30)-15
+		walk += 1
+		if speed > 5
+			speed = 5
+	}
+	if (random(16) < 1 && abs(angle_difference(projectiledir, gunangle) < 100)
+	&& dodgethis.typ != 0) {
+		fire = 5
+	} else if (random(5) < 1) {
+		var _furthest = instance_furthest(x + random(120) - 60, y + random(120) - 60, Floor);
+		if (_furthest != noone) {
+			walk += 1
+		}
+	} else
+		direction = point_direction(x, y, dodgethis.hspeed, dodgethis.vspeed) + 180 + random(30) - 15;
+	}
+	
+if targetvisible == 1 and fire <= 0{
+	spr_idle = spr_fire
+	gunangle = point_direction(x,y,target.x,target.y)
+	fire = 8+adrenaline/3
+	wait 2
+	if instance_exists(self)
+	with (instance_create(x, y, FlameBall)) {
+		motion_add(other.gunangle + (random(8) - 4)/((80-other.adrenaline)/7), 4+((80-other.adrenaline)/8));
+		image_angle = direction;
+		team = other.team;
+		creator = other;
+		damage = 5
+	}
+}
+	
+#define enemysteroids_dead
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}
+mod_script_call("mod", "Melting", "enemymelting_create", x, y)
+	#define drawenemygun
+if image_alpha > 0 and "wkick" in self{
+if gunangle < 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+	draw_sprite_ext(sprite_index,image_index,x,y,right,1,image_angle,image_blend,1);
+if gunangle >= 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+}

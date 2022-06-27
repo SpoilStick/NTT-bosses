@@ -1,0 +1,210 @@
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		enemyyv_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define enemyyv_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	name = "gungod"
+	hitid = [sprMutant6Idle,"GUNGOD"]
+	spr_idle = sprMutant6Idle
+	spr_walk = sprMutant6Walk
+	spr_hurt = sprMutant6Hurt
+	spr_dead = sprMutant6Dead
+	snd_hurt = sndMutant6Hurt
+	snd_dead = sndMutant6Dead
+	direction = random(360)
+	gunangle = direction
+	gunsprite = sprMinigun
+	weapondrop = 39
+	corpse = 0
+	mask_index = mskBandit
+	spr_shadow = shd24
+	size = 1
+	team = 1
+	maxhealth = 80*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 0
+	target = 0
+	targetvisible = 0
+	alrm1 = 50
+	walk = 0
+	raddrop = 0
+	ammo = 555
+	on_step = script_ref_create(enemyyv_step)
+	on_draw = script_ref_create(drawenemygun)
+	on_destroy = script_ref_create(yv_dead)
+	return id;
+	}
+
+#define enemyyv_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		if(speed > friction) 
+			sprite_index = spr_walk;
+		else 
+			sprite_index = spr_idle;
+		}
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && collision_line(x,y,target.x,target.y,Wall,0,0) < 0)
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	gunangle = point_direction(x,y,target.x,target.y)
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if alrm1 > 0 
+	alrm1-=1
+	
+if walk > 0{
+	walk -= 1
+	motion_add(direction, 0.8)
+	}
+if speed > 4{
+	speed = 4
+	}	
+if  targetvisible == 1 and random(50)<1 and walk != -1 {
+	direction = point_direction(x,y,target.x,target.y)
+	walk = 10
+	}
+else if (random(50) < 1) and walk != -1 {
+	direction += random_range(-90,90)
+	walk = 25+random(10)
+	}
+
+repeat (1) {
+	var dodgethis = instance_nearest(x, y, projectile);
+	if (dodgethis == noone) break;
+	if (dodgethis.team == team) break;
+    var dodgethis_x = dodgethis.x;
+	var dodgethis_y = dodgethis.y;
+    if (point_distance(x, y, dodgethis_x, dodgethis_y) >= 100) break;
+	var projectiledir = point_direction(x, y, dodgethis_x, dodgethis_y);
+	if distance_to_object(dodgethis < 100) {
+		direction = -projectiledir + random(30)-15
+		walk += 1
+		if speed > 5
+			speed = 5
+	}
+	if (random(16) < 1 && abs(angle_difference(projectiledir, gunangle) < 100)
+	&& dodgethis.typ != 0) {
+		fire = 5
+	} else if (random(5) < 1) {
+		var _furthest = instance_furthest(x + random(120) - 60, y + random(120) - 60, Floor);
+		if (_furthest != noone) {
+			walk += 1
+		}
+	} else
+		direction = point_direction(x, y, dodgethis.hspeed, dodgethis.vspeed) + 180 + random(30) - 15;
+	}	
+
+if alrm1 = 0 and targetvisible{
+	alrm1 += 200
+	repeat(72){
+		if instance_exists(self){ 
+			if ammo > 0{
+				wkick = 5
+				ammo -= 1
+				sound_play(sndGoldPistol);
+				with instance_create(x,y,Bullet1){
+					motion_add(other.gunangle + (random(26) - 13), 16);
+					image_angle = direction;
+					team = other.team;
+					creator = other;
+					}
+				wait 1;
+				}
+			else{
+				sound_play(sndEmpty);
+				wkick = 2
+				with instance_create(x,y,PopupText)
+					text = "EMPTY"
+				wait 5;
+				}
+			}
+		}
+	}
+#define yv_dead
+with instance_create(x,y,WepPickup){	
+	wep = other.weapondrop
+	rot = other.gunangle
+	motion_add(random(360),random(8))
+	}
+with instance_create(x,y,Corpse){
+	sprite_index = other.spr_dead
+	}
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}
+	
+	#define drawenemygun
+if image_alpha > 0 and "wkick" in self{
+if gunangle < 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+	draw_sprite_ext(sprite_index,image_index,x,y,right,1,image_angle,image_blend,1);
+if gunangle >= 180
+	draw_sprite_ext(gunsprite,0,x-lengthdir_x(wkick,gunangle),y-lengthdir_y(wkick,gunangle),1,right,gunangle,c_white,1);
+}

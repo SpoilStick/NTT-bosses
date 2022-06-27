@@ -1,0 +1,251 @@
+global.planthatch = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAPAAAAAYCAYAAADEQnB9AAAAB3RJTUUH4QkJFQITzbENuwAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAACbElEQVR4nO2YTU7DQAyFIzYgwUk4BLdhAwuuAmtOwRW4WOkgjfRkOenEY2c87Yv0VBTUz47Hf+ny8vq1UBQ1p4Y7QFGUXcMdoCjKruEOUBRl13AHKCqb3n8eT6N9aNVwByiKsmu4AxRlUZmS2qScaXp6aLgDFGXRWgGP9ulom8MfmqIou4Y7QF2/ztepaoT9jNPaS3dL4/X7/XGqav3OniuSj+wIG9F8aSOS7W2jsJ4/n5aq6Dy6uau1ez683f/rfAiunfQIfuGWDlz5njaO4M8aH+l3+Sz3ii3v5/DUAhvDErA5ePJTJGh0AhVeTRr8u9dGNH/m+KDfVdiM8J5HAXjnI8alNp6IptbL333ANfBRBXAU35o8WfjZ41MnbRUmKf7P8hyRRSY3Hmxs1UYmftoE9UggnFjI9SiCaP7M8cE1GX3HIkObVhtRRSbjg3ay8XclkPcUiOTLBNWSNDN/5vjUAtWKFz89pzAWQcSqK3+D6F3dvfjNBrzXuAz8nsPOwM8YH22yY4Kiet+3tSmmFYC10LaKLOIMLPzUCRQxYeQPNtn5s8VHFhWutmvF21vAlwrAslrLFV1rQLi+92wQPfzdCSTfObwTNJp/VIHdanyQKwtV3kd5FwDaNL1bwpovmdgcRvN3H4Tsqh7dM5ovC2A2/mzx0diS2VPAOOW1prM10VrsbPE15t5n8ORfNLC2ouBn75pF/nXyZQJWlrTjwdcK1fourL1erHF7G0Qvv6mDSpAlKOTfDl8rsq2i6uVq/L3+tthQJ2BHg/DgrxqQX/AKDvnXz9+y482M4K81hox8l4OiqGtRVGOI4v8B6hHH0IG5qdUAAAAASUVORK5CYII=",10,12,12)
+global.plantidle = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAYAAAAF6fiUAAAAB3RJTUUH4QkJFRYD/qjKigAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABOElEQVR4nO2WwQ0CMQwE86UWGuBFN3zohg8VQEcUwYMSkA4FZBRFuYsdZ5OcfI8VIB2zXi9EccfTxW3qp+4DWFf+AeemWNXMgeymS1TkyIJv1/P0ej7+8p9jk5LlIdlLi6ldMifHkrcIPGfyPvzEDYdkxx7Ikrk5KEMqh2j4EBxC77v9V5wQSDbXo0bJtXKI4QQmoHRBSPYoJUtyiOEE9u/9c/RaY3Ate5SSJTmy8NiA/qrhL6jk/EewRyk5lUNUQGpRoVG8IM35WZvdqmSOD8cja0Amc1c6zZJQ7BYlc3OoCojDJAHKuzWajSyZkyP0Sn5PYlB6XvZko0vWZhhiSegCWpW82gIs88UGXiMFGI0v3Y/IhG4SiABW+UUmqAAW+bBBNm0FrELdB7Cu7gNYV/cBrKv7ANb1AYJ35WA2RiL8AAAAAElFTkSuQmCC",4,12,12)
+global.planthurt = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAEgAAAAYCAYAAABZY7uwAAAAB3RJTUUH4QkJEjMfBxVQpwAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABNklEQVR4nO2VMQ7CMAxFLTZ2Bu4AB2DiNizchqUngJWZg3AIBo6AVBSQUWScNjYOthCRvlDb6Of/F5rCerODv8pyDxBdgw97ZgzNEy8O0FMNzfPwF8GpGZLw+27bXy/nl9I1V+q2ekoCycrfFE4tIC48LYKhkw7TxUO1gCz93eCUCmB4DK2FY+Xv9mpxBfLwaV66Jz1/rP1NANWGHyuA50AeXHo4W/tPwHGcjh17fzZfxvG3OqS1u5zvNu5wegVwl/HXy7+4yDcgYRGA908ulQaShf/oQhSAFSC62xiwVEQKyMq/ahEOghUgrgRXRAvoU381IPpMG75UgBbx8q9exOKfMlZCcyC39v8DsgKUQ2pRIAk/x5H8xYu0BIQlIvk3C/Ircg8QXe4Boss9QHS5B4gu9wDRdQfdwzc5oSqcuwAAAABJRU5ErkJggg==",3,12,12)
+global.plantfire = sprite_add_base64("iVBORw0KGgoAAAANSUhEUgAAAKgAAAAYCAYAAABugbbBAAAAB3RJTUUH4QkJFRQ75JwQlgAAABd0RVh0U29mdHdhcmUAR0xEUE5HIHZlciAzLjRxhaThAAAACHRwTkdHTEQzAAAAAEqAKR8AAAAEZ0FNQQAAsY8L/GEFAAAABmJLR0QASABvAKgKRg8wAAABzklEQVR4nO2YQU7EMAxFu+UsXGBW3IYNt2EzJ4AbcQgWHAFpRkEKClbqxs7/SSq8+BqN1L7v2I6bdnt6ft1CoVU1PYBQSNPxBdt2k4IYV7hnYFtzhIqB7TFiDfAGTcG8XV9uX58fv0r/9xZgSUbi7LFlUqyJZrFb/cocfV/+yuPJ9hjB9za5qTn3GtUauMbOXG9CmOzWzVD6MZoH6TGK7x1ykKDfHx5/1BK4xu7hstk9OcpeVj+2xyh+z5BzF7oMGNlEXi6bbS1uWdj0P12ff1fxYPJRQ84MZyY9sb1cNtuzibMP+jyN8mDyUUPuEC4N8hj2nkv+U4P2NOcIDyYfNeSaDKSRbM6eg7nkpsBRLxVotndDsJqUPaVRE7RnyB2aZCMZZFbvpwfJRn2WYbFbi5DPvMinAsODyUcMOdMiqgDnZNhjy0Zala0VgbHhmB5Mfu+QMy0CcXZrYfc8EkeyawWWXNSmYHsw+Rq7rEn13hUb9Gz8sghaAZBPA7THCL7riLNKkYMf/Op9VoMk5gLOzl+twKvxrfk3meS3MMYCzs4v31CDj8u/y4S1gOAHX4oWSCiE0PQAQiFN0wMIhTRNDyAU0jQ9gFBI0/QAQiFNd0l38dbEXAmVAAAAAElFTkSuQmCC",7,12,12)
+
+game_start();
+
+#define game_start
+global.hadGenCont = false;
+
+#define step
+var hasGenCont = instance_exists(GenCont);
+var hadGenCont = global.hadGenCont;
+global.hadGenCont = hasGenCont;
+if (GameCont.loops > 0 && !hasGenCont && hadGenCont && random(49) < GameCont.loops) {
+	repeat (GameCont.loops) scr_await();
+}
+
+#define scr_await
+if (!fork()) exit;
+var ref = instance_create(10016, 10016, becomenemy);
+var enemies = instance_number(enemy);
+while (instance_number(enemy) > enemies * 0.9) wait 1;
+if (!instance_exists(ref)) exit;
+wait irandom_range(90, 150);
+while (instance_exists(ref)) {
+	// find target:
+	var targets = instance_number(Player);
+	if (targets == 0) { with (ref) instance_destroy(); exit; }
+	targets = irandom(targets - 1);
+	var target = noone;
+	with (Player) if (--targets < 0) { target = id; break; }
+	if (target == noone) { with (ref) instance_destroy(); exit; }
+	//
+	var target_x = target.x, target_y = target.y;
+	var can_spawn = false, spawn_x, spawn_y;
+	with (Wall) {
+		var _x = x + 8, _y = y + 8;
+		// must be within range:
+		var dist = point_distance(_x, _y, target_x, target_y);
+		if (dist < 110 || dist > 120) continue;
+		// must have line of sight towards player:
+		if (collision_line(_x, _y, target_x, target_y, Wall, true, true) != noone) continue;
+		// must not be in a single wall-block:
+		if !(!place_free(x - 16, y) && !place_free(x + 16, y)
+		|| !place_free(x, y + 16) && !place_free(x, y - 16)) continue;
+		// OK!
+		bulb_create(_x, _y)
+		instance_create(x+16, y+16, PortalClear)
+		with (ref) instance_destroy();
+		exit;
+	}
+	wait 5;
+}
+
+#define bulb_create(_x,_y)
+with instance_create(_x, _y, CustomEnemy){
+	hitid = [sprMutant5Idle,"PLANT"]
+	spr_idle = global.planthatch
+	spr_hurt = global.planthatch
+	spr_dead = mskNone
+	snd_hurt = sndMutant5Hurt
+	snd_dead = sndMutant5Hurt
+	mask_index = mskBandit
+	spr_shadow = shd24
+	corpse = 1
+	size = 1
+	team = 1
+	speed = 0
+	staythefuckstillx = x
+	staythefuckstilly = y
+	maxhealth = 20/(GameCont.loops*GameCont.loops+1+instance_number(Player))
+	isaplant = choose(0,1,1,1)
+	image_speed = 0.4
+	image_xscale = choose(-1,1)
+	on_step = script_ref_create(bulb_step)
+	on_destroy = script_ref_create(bulb_dead)
+	return id;
+	}
+#define bulb_step
+	if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		sprite_index = spr_idle;
+		image_index = 0
+		}
+	x = staythefuckstillx
+	y = staythefuckstilly
+	if random(1000)<1
+		instance_destroy()
+#define bulb_dead
+var __x = staythefuckstillx;
+var __y = staythefuckstilly;
+with instance_create(x,y,Effect){
+	x= __x
+	y= __y
+	speed = 0
+	friction = 0
+	sprite_index = global.planthatch
+	image_xscale = other.image_xscale
+	image_index = 9
+	image_speed = 0
+	depth = other.depth+1
+	}
+repeat(random(6)){
+	with instance_create(x,y,FireFly)
+		motion_add(random(360),random(1))
+		}
+if isaplant = 1
+with instance_create(__x, __y, CustomEnemy){
+	hitid = [sprMutant5Idle,"PLANT"]
+	spr_idle = global.plantidle
+	spr_hurt = global.planthurt
+	spr_dead = sprMutant5Dead
+	spr_fire = global.plantfire
+	snd_hurt = sndMutant5Hurt
+	snd_dead = sndMutant5Hurt
+	direction = random(360)
+	gunangle = direction
+	mask_index = mskBandit
+	spr_shadow = shd24
+	staythefuckstillx = __x
+	staythefuckstilly = __y
+	corpse = 1
+	size = 1
+	team = 1
+	speed = 0
+	maxhealth = 80*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 0
+	target = 0
+	targetvisible = 0
+	fire = 80+random(40)
+	raddrop = 0
+	on_step = script_ref_create(enemyplant_step)
+	on_destroy = script_ref_create(enemyplant_dead)
+	}
+else repeat(75){
+	with instance_create(x,y,ToxicGas){
+		motion_add(random(360),random(12))
+		friction = 0.1
+		}
+	}
+#define enemyplant_create(_x, _y)
+with instance_create(_x, _y, CustomEnemy){
+	hitid = [sprMutant5Idle,"PLANT"]
+	spr_idle = global.plantidle
+	spr_hurt = global.planthurt
+	spr_dead = sprMutant5Dead
+	spr_fire = global.plantfire
+	snd_hurt = sndMutant5Hurt
+	snd_dead = sndMutant5Hurt
+	direction = random(360)
+	gunangle = direction
+	mask_index = mskBandit
+	spr_shadow = shd24
+	staythefuckstillx = _x
+	staythefuckstilly = _y
+	corpse = 1
+	size = 1
+	team = 1
+	friction = 300
+	speed = 0
+	maxhealth = 80*(GameCont.loops*GameCont.loops+instance_number(Player))
+	canmelee = 0
+	target = 0
+	targetvisible = 0
+	fire = 80+random(40)
+	raddrop = 0
+	on_step = script_ref_create(enemyplant_step)
+	on_destroy = script_ref_create(enemyplant_dead)
+	return id;
+	}
+
+#define enemyplant_step
+if(nexthurt > current_frame){
+		if(sprite_index != spr_hurt) {
+			image_index = 0;
+			sprite_index = spr_hurt;}
+		}
+	else{
+		sprite_index = spr_idle;
+		}
+x = staythefuckstillx
+y = staythefuckstilly
+if(instance_exists(Player))
+	target = instance_nearest(x,y,Player);
+	else
+	target = 0;
+if(instance_exists(target) && collision_line(x,y,target.x,target.y,Wall,0,0) < 0)
+	targetvisible = 1;
+	else 
+	targetvisible = 0;	
+
+if target > 0 and targetvisible{
+	image_xscale = right
+	if target.x > x
+		right = 1
+	else
+		right = -1
+	}
+
+if fire > 0 
+	fire-=1
+	
+if spr_idle == spr_fire and image_index >= 6
+	spr_idle = global.plantidle
+	
+if targetvisible == 1 and fire <= 0{
+	spr_idle = spr_fire
+	gunangle = point_direction(x,y,target.x,target.y)
+	fire = 20
+	wait 2
+	if instance_exists(self)
+	with (instance_create(x, y, Seeker)) {
+		motion_add(other.gunangle + random(20) - 50, 2 + random(3));
+		image_angle = direction;
+		team = other.team;
+		creator = other;
+		damage = 6
+	}
+	with (instance_create(x, y, Seeker)) {
+		motion_add(other.gunangle + random(20) + 50, 2 + random(3));
+		image_angle = direction;
+		team = other.team;
+		creator = other;
+		damage = 6
+	}
+}
+
+#define enemyplant_dead
+repeat(6){
+	with instance_create(x,y,Feather){
+		sprite_index = sprLeaf
+		motion_add(random(360),random(4))
+		image_angle = random(360)
+		}
+	}
+repeat(10+5*(GameCont.loops+5*(GameCont.loops))) {
+	with instance_create(x, y, RadMaggot) {
+		maxhealth += 20
+		my_health += 20
+		image_xscale *= 1.5
+		image_yscale *= 1.5
+	}
+}
+if (random(4)<3) {
+	bulb_create(x,y)
+}

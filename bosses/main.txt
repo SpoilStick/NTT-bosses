@@ -1,0 +1,14 @@
+/loadmod Fish.mod
+//loadmod Crystal.mod
+//loadmod Eyes.mod
+/loadmod Melting.mod
+/loadmod Plant.mod
+/loadmod YV.mod
+/loadmod Steroids.mod
+/loadmod Robot.mod
+/loadmod Chicken.mod
+/loadmod Rebel.mod
+/loadmod Horror Swarm.mod
+/loadmod Rogue.mod
+/loadmod Skeleton.mod
+//loadmod Frog.mod
